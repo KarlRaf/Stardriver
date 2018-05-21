@@ -2,6 +2,7 @@ class FlightsController < ApplicationController
 
 
   def new
+    @rocket = Rocket.find(params[:rocket_id])
     @flight = Flight.new
   end
 
@@ -12,7 +13,7 @@ class FlightsController < ApplicationController
     @flight.rocket = @rocket
     if @flight.save
       # should redirect to the dashboard, for now redirect to home page
-      redirect_to root_path
+      redirect_to rocket_flights_path
     else
       render :new
     end
@@ -25,7 +26,7 @@ class FlightsController < ApplicationController
   private
 
   def flight_params
-    params.require(:flight).permit(:description, :date, :departure, :dsetination, :rocket_id)
+    params.require(:flight).permit(:description, :date, :departure, :destination, :rocket_id)
   end
 
 end
