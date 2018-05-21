@@ -1,0 +1,10 @@
+<div class="container">
+<h1>Create a flight</h1>
+<%= simple_form_for [@rocket, @flight] do |f| %>
+  <%= f.input :destination %>
+  <%= f.input :departure %>
+  <%= f.input :description %>
+  <%= f.input :date , as: :date, html5: true %>
+  <%= f.submit %>
+<% end %>
+</div>
