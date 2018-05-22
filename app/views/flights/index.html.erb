@@ -6,7 +6,9 @@
           <h4>Sorry, there are no flights matching to: <%= params[:search] %>.</h4>
         <% else %>
           <% @flights.each do |flight| %>
-            <h4><%= flight.destination %></h4>
+            <h3><%= flight.destination %></h3>
+            <h4>Departure from <%= flight.departure  %> on <%= flight.date %></h4>
+            <p><%= flight.description %></p>
           <% end %>
         <% end %>
       </div>
