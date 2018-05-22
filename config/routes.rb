@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   end
 
   resources :bookings, only: [:index, :show]
+  patch 'flights/flights_id/bookings/:id', to: 'bookings#validates_user', as: :validates
 end
