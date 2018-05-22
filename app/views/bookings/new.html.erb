@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Confirm your booking</h1>
+  <h3>Destination: <%= @flight.destination %></h3>
+  <h3>Date: <%= @flight.date %></h3>
+
+  <%= simple_form_for [@flight, @booking] do |f| %>
+    <%= f.input :comments %>
+    <%= f.submit %>
+<% end %>
+</div>
