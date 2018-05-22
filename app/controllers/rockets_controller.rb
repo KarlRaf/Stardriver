@@ -25,6 +25,22 @@ class RocketsController < ApplicationController
     authorize @rocket
   end
 
+  def edit
+    @rocket = Rocket.find(params[:id])
+    authorize @rocket
+  end
+
+  def update
+    @rocket = Rocket.find(params[:id])
+    authorize @rocket
+    @rocket.update(rocket_params)
+    if @rocket.save
+      redirect_to rocket_path(@rocket)
+    else
+      render :new
+    end
+  end
+
   def destroy
     @rocket = Rocket.find(params[:id].to_i)
     authorize @rocket
