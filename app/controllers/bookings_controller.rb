@@ -9,11 +9,20 @@ class BookingsController < ApplicationController
   end
 
   def new
-    @booking = Booking.new(booking_params)
+    @flight = Flight.find(params[:flight_id])
+    @booking = Booking.new
+
   end
 
   def create
     @booking = Booking.new()
+    # @booking.status = "pending"
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private
