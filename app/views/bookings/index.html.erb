@@ -47,11 +47,9 @@
         <div class="bookings-column">
           <h3> Bookings: </h3>
             <% @bookings.each do |booking| %>
-              <% if booking.flight_id.rocket_id.user_id == current_user.id %>
+              <% if booking.flight.rocket.user_id == current_user.id %>
                 <p><%= booking.id %> - to: <%= booking.flight.destination %> - currently set as <%= booking.status %></p>
                 <%= link_to "Edit / Delete", booking_path(booking), class: 'btn btn-primary' %>
-              <% else %>
-                <p>You currently have no booking as a space pilot</p>
               <% end %>
             <% end %>
         </div>

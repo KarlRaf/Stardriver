@@ -5,10 +5,12 @@
   <h2>Your booking's destination is: <%= @booking.flight.destination %> </h2>
   <h2>Your booking's date is: <%= @booking.flight.date %> </h2>
   <h2>Your booking's status is: <%= @booking.status %></h2>
+  <h2>Your passengers are:</h2>
+  <% passengers = @booking.flight. %>
 
   <%= link_to "Check additional flight's details", flight_path(@booking.flight) %>
 
-  <%= link_to "Check additional rocket's details", rocket_flight_path(@booking.user.rocket) %>
+  <%= link_to "Check additional rocket's details", rocket_path(@booking.flight.rocket) %>
 
   <h2>Comments: <%= @booking.comments %> </h2>
 
