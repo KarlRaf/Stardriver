@@ -3,7 +3,10 @@
   <p>Name: <%= current_user.name %></p>
   <p>Bio: <%= current_user.bio %></p>
   <p>Email: <%= current_user.email %></p>
-  <p>Rocket:
+  <p>Rockets:
+    <% unless current_user.rockets %>
+      You don't have a rocket yet. <%= link_to "Add one", new_rocket_path %>
+    <% end %>
     <ul>
       <% current_user.rockets.each do |rocket| %>
         <li>Model : <%= rocket.model %>, with <%= rocket.capacity %> sits. <%= link_to "Delete", rocket_path(rocket)  , method: :delete, data: {confirm: "are you sure you want to delete this rocket? This will destroy all the flights you planned with it aswell"} %></li>
