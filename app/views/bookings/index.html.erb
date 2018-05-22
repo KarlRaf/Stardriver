@@ -1,6 +1,6 @@
 <div class="medium-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1517976547714-720226b864c1?ixlib=rb-0.3.5&s=44ef7f198828fa8005ef23032926c29d&auto=format&fit=crop&w=1050&q=80');">
   <div class="banner-content">
-    <h1>Your bookings</h1>
+    <h1>Your next bookings as a space traveler</h1>
   </div>
 </div>
 
@@ -11,9 +11,7 @@
       <div class="bookings-column">
         <h3> Bookings: </h3>
           <% @bookings.each do |booking| %>
-            <%= link to booking_path(booking) do %>
-              <%= booking.id %> - to: <%= booking.flight.destination %>
-            <% end %>
+            <%= booking.id %> - to: <%= booking.flight.destination %>
           <% end %>
       </div>
 
@@ -27,10 +25,38 @@
       <div class="cancel-column">
         <h3> Cancel: </h3>
           <% @bookings.each do |booking| %>
-            <%= link_to "Delete", flight_booking_path(booking.flight, booking), method: :delete, class: 'btn btn-danger' %>
+            <%= link_to "Delete", flight_booking_path(booking.flight, booking), method: :delete, class: 'btn btn-danger', data: {confirm: "are you sure you want to delete this booking?"} %>
           <% end %>
       </div>
 
     </div>
 
 </div>
+
+<% if current_user.rockets.exists? %>
+  <div class="medium-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1501576003369-64f301d92efb?ixlib=rb-0.3.5&s=650be69843eaadf69a9d23b8595e73bf&auto=format&fit=crop&w=1050&q=80');">
+    <div class="banner-content">
+      <h1>Your next bookings as a space pilot</h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content-columns">
+
+      <div class="row">
+        <div class="bookings-column">
+          <h3> Bookings: </h3>
+            <% @bookings.each do |booking| %>
+              <% if booking.flight_id.rocket_id.user_id == current_user.id %>
+                <p><%= booking.id %> - to: <%= booking.flight.destination %> - currently set as <%= booking.status %></p>
+                <%= link_to "Edit / Delete", booking_path(booking), class: 'btn btn-primary' %>
+              <% else %>
+                <p>You currently have no booking as a space pilot</p>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
