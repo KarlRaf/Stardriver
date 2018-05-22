@@ -1,6 +1,5 @@
 class FlightsController < ApplicationController
 
-
   def new
     @rocket = Rocket.find(params[:rocket_id])
     @flight = Flight.new

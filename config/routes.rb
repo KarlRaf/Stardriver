@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :rockets do
     resources :flights
   end
+
 end
