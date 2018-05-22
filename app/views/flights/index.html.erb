@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <div>
+        <% if @flights.blank? %>
+          <h4>Sorry, there are no flights matching to: <%= params[:search] %>.</h4>
+        <% else %>
+          <% @flights.each do |flight| %>
+            <h4><%= flight.destination %></h4>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
