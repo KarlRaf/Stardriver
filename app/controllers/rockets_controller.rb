@@ -20,6 +20,12 @@ class RocketsController < ApplicationController
     @rocket = Rocket.find(params[:id])
   end
 
+  def destroy
+    @rocket = Rocket.find(params[:id].to_i)
+    @rocket.destroy
+    redirect_to user_path(current_user)
+  end
+
 
   private
 
