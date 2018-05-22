@@ -1,17 +1,16 @@
 class RocketsController < ApplicationController
 
   def new
-    @user = User.find(params[:user_id])
+    @user = current_user
     @rocket = Rocket.new
   end
 
   def create
     @rocket = Rocket.new(rocket_params)
-    @user = User.find(params[:user_id])
+    @user = current_user
     @rocket.user = @user
     if @rocket.save
-    # should redirect to the dashboard, for now redirect to home page
-      redirect_to rocket_flight(@rocket)
+      redirect_to rocket_path(@rocket)
     else
       render :new
     end
