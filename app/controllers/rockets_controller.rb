@@ -10,7 +10,7 @@ class RocketsController < ApplicationController
     @user = current_user
     @rocket.user = @user
     if @rocket.save
-      redirect_to rocket_path(@rocket)
+      redirect_to new_rocket_flight_path(@rocket)
     else
       render :new
     end
