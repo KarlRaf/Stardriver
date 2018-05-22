@@ -1,7 +1,11 @@
   class FlightsController < ApplicationController
 
   def index
-    @flights = Flight.search(params[:search])
+    if params[:search].present?
+      @flights = Flight.where(destination: params[:search])
+    else
+      @flights = Flight.all
+    end
   end
 
   def new
