@@ -1,5 +1,7 @@
   class FlightsController < ApplicationController
 
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     if params[:search].present?
       @flights = Flight.where(destination: params[:search])
