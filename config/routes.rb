@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :rockets do
     resources :flights
   end
+  resources :flights do
+    resources :bookings, only: [:index, :show, :new, :create, :destroy]
+  end
 
-  resources :bookings, only: [:index, :show, :new, :create, :destroy]
-
+  resources :bookings, only: [:index, :show]
 end

@@ -15,8 +15,16 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new()
-    # @booking.status = "pending"
+    @flight = Flight.find(params[:flight_id])
+    @booking = Booking.new(booking_params)
+    @booking.status = "pending"
+    @booking.flight = @flight
+    @booking.user = current_user
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :new
+    end
   end
 
   def destroy
@@ -28,7 +36,7 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:status, :comments)
+    params.require(:booking).permit(:comments)
   end
 
 end
