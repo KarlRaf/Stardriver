@@ -4,4 +4,7 @@ Rails.application.routes.draw do
   resources :rockets do
     resources :flights
   end
+
+  resources :bookings, only: [:index, :show, :new, :create]
+
 end
