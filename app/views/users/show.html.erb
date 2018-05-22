@@ -15,7 +15,7 @@
             <%= link_to "Delete", rocket_path(rocket)  , method: :delete, data: {confirm: "are you sure you want to delete this rocket? This will destroy all the flights you planned with it aswell"} %>
           <% end %>
           <% if policy(rocket).update? %>
-            <%= link_to "Modify", edit_rocket_path(current_user, rocket) %>
+            <%= link_to "Modify", edit_rocket_path(rocket) %>
           <% end %>
             </li>
       <% end %>
