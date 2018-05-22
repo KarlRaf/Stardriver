@@ -11,7 +11,9 @@
       <div class="bookings-column">
         <h3> Bookings: </h3>
           <% @bookings.each do |booking| %>
-            <p> <%= booking.id %> - to :<%= booking.flight.destination %> </p>
+            <%= link to booking_path(booking) do %>
+              <%= booking.id %> - to: <%= booking.flight.destination %>
+            <% end %>
           <% end %>
       </div>
 
