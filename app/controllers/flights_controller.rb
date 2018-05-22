@@ -1,7 +1,6 @@
 class FlightsController < ApplicationController
 
   def index
-    raise
     @flights = Flight.search(params[:search])
   end
 
