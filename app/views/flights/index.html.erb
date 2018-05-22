@@ -11,15 +11,12 @@
 
           <div class="card-description">
 
-              <%= link_to  flight_path(flight), class: "card-link" do %>
-              <% end %>
-                <h3><%= flight.destination %></h3>
-                <h4>Departure from <%= flight.departure  %> on <%= flight.date %></h4>
-                <p><%= flight.description %></p>
-
-
-          </div>
-
+            <%= link_to  flight_path(flight), class: "card-link" do %>
+            <% end %>
+              <h3><%= flight.destination %></h3>
+              <h4>Departure from <%= flight.departure  %> on <%= flight.date %></h4>
+              <p><%= flight.description %></p>
+        </div>
       </div>
     </div>
   </div>
