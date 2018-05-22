@@ -7,14 +7,23 @@
       <div class="col-sm-8 col-sm-offset-2">
         <div class="card">
 
-            <div class="card-description">
-              <%= link_to  flight_path(flight), class: "card-link" do %>
-              <% end %>
+ <% @flights.each do |flight| %>
+  <div class="row">
+
+    <div class="col-sm-8 col-sm-offset-2">
+      <div class="card">
+        <% if @flights.blank? %>
+          <h4>Sorry, there are no flights matching to: <%= params[:search] %>.</h4>
+        <% else %>
+
+          <div class="card-description">
+
+            <%= link_to  flight_path(flight), class: "card-link" do %>
+            <% end %>
               <h3><%= flight.destination %></h3>
               <h4>Departure from <%= flight.departure  %> on <%= flight.date %></h4>
               <p><%= flight.description %></p>
-            </div>
-          <img class="card-user" src="">
+
         </div>
       </div>
     </div>
