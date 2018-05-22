@@ -30,7 +30,7 @@ class RocketsController < ApplicationController
   private
 
   def rocket_params
-    params.require(:rocket).permit(:capacity, :model, :user_id)
+    params.require(:rocket).permit(:capacity, :model, :user_id, :photo)
   end
 
 end

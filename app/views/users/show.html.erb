@@ -1,5 +1,6 @@
 <h3>I'm the king, I'm <%= current_user.name %></h3>
 <div>
+  <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle" %>
   <p>Name: <%= current_user.name %></p>
   <p>Bio: <%= current_user.bio %></p>
   <p>Email: <%= current_user.email %></p>
