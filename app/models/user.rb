@@ -23,5 +23,4 @@ class User < ApplicationRecord
   def rockets?
     self.rockets != nil
   end
-
 end
