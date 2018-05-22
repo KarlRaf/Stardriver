@@ -1,9 +1,11 @@
-<h1>Flight details</h1>
+<div class="container">
 
-<h2><%= @flight.description %></h2>
-<h2> <%= @flight.date %> </h2>
-<h2> <%= @flight.departure  %> </h2>
-<h2> <%= @flight.destination %> </h2>
+  <h1>Flight details</h1>
 
-<%= link_to "Book this flight!", new_flight_booking_path(@flight), class: 'btn btn-primary' %>
+  <h2><%= @flight.description %></h2>
+  <h2> <%= @flight.date %> </h2>
+  <h2> <%= @flight.departure  %> </h2>
+  <h2> <%= @flight.destination %> </h2>
 
+  <%= link_to "Book this flight!", new_flight_booking_path(@flight), class: 'btn btn-primary' %>
+</div>
