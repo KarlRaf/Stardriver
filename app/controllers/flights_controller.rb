@@ -1,4 +1,8 @@
-class FlightsController < ApplicationController
+  class FlightsController < ApplicationController
+
+  def index
+    @flights = Flight.search(params[:search])
+  end
 
   def new
     @rocket = Rocket.find(params[:rocket_id])
