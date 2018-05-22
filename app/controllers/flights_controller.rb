@@ -22,7 +22,7 @@
     @flight.rocket = @rocket
     if @flight.save
       # should redirect to the dashboard, for now redirect to home page
-      redirect_to rocket_flights_path
+      redirect_to new_flight_booking_path(@flight)
     else
       render :new
     end
