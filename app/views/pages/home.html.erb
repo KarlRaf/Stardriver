@@ -1,10 +1,12 @@
 <div class="container">
-  <div>
-    <h1>Stardriver</h1>
-    <h2>To infinity and beyond!</h2>
-    <%= form_tag(flights_path, method: :get) do %>
-      <%= text_field_tag(:search, params[:search], placeholder: "Search a Flight") %>
-      <%= submit_tag ("Go!") %>
-    <% end %>
+  <div class="banner">
+    <div class="banner content">
+      <h1>Stardriver</h1>
+      <h2>To infinity and beyond!</h2>
+      <%= form_tag(flights_path, method: :get) do %>
+        <%= text_field_tag(:search, params[:search], placeholder: "Search a Flight") %>
+        <%= submit_tag ("Go!") %>
+      <% end %>
+    </div>
   </div>
 </div>
