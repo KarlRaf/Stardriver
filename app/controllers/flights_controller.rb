@@ -1,4 +1,4 @@
-class FlightsController < ApplicationController
+  class FlightsController < ApplicationController
 
 
   def new
