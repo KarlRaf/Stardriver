@@ -3,7 +3,7 @@
     <h1>Stardriver</h1>
     <h2>To infinity and beyond!</h2>
     <%= form_tag(flights_path, method: :get) do %>
-      <%= text_field_tag(:search, params[:destination]) %>
+      <%= text_field_tag(:search, params[:search]) %>
       <%= submit_tag ("Search a Flight!") %>
     <% end %>
   </div>
