@@ -46,12 +46,12 @@ class BookingsController < ApplicationController
   end
 
   # NOT IN USE
-  # def refuses_user
-  #   @booking = Booking.find(params[:id])
-  #   @booking.status = "Declined"
-  #   @booking.save
-  #   redirect_to booking_path(@booking)
-  # end
+  def refuses_user
+    @booking = Booking.find(params[:id])
+    @booking.status = "Declined"
+    @booking.save
+    redirect_to bookings_path
+  end
 
   private
 
