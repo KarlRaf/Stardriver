@@ -11,7 +11,9 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#traveler" aria-controls="traveler" role="tab" data-toggle="tab">Traveler</a></li>
+      <% if user.rockets %>
       <li role="presentation"><a href="#pilot" aria-controls="pilot" role="tab" data-toggle="tab">Pilot</a></li>
+      <% end %>
     </ul>
 
     <!-- Tab panes -->
@@ -34,6 +36,7 @@
             </div>
           <% end %>
       </div>
+      <% if user.rocket %>
       <div role="tabpanel" class="tab-pane" id="pilot">
           <% @bookings.each do |booking| %>
             <% if booking.flight.rocket.user_id == current_user.id %>
@@ -54,6 +57,7 @@
             <% end %>
           <% end %>
       </div>
+      <% end %>
     </div>
 
   </div>
