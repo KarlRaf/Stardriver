@@ -20,7 +20,7 @@
     @rocket = Rocket.find(flight_params[:rocket_id])
     @flight.rocket = @rocket
     if @flight.save
-      redirect_to new_flight_booking_path(@flight)
+      redirect_to bookings_path
     else
       render :new
     end
