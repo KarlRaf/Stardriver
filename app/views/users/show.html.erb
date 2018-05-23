@@ -1,4 +1,10 @@
-<h3>I'm the king, I'm <%= current_user.name %></h3>
+<div class="medium-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url(user.photo);">
+  <div class="banner-content">
+    <h3>Hello <%= current_user.name %>!</h3>
+    <h4>Here are all your informations</h4>
+  </div>
+</div>
+
 <div>
   <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle" %>
   <p>Name: <%= current_user.name %></p>
