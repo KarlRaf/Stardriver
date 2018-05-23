@@ -1,13 +1,11 @@
 .footer {
-  background: #F4F4F4;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
-  bottom: 0;
-  position: absolute;
 }
 .footer-links {
   display: flex;
@@ -15,7 +13,7 @@
 }
 .footer-links a {
   color: black;
-  opacity: 0.15;
+  opacity: 0.4;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
@@ -25,4 +23,16 @@
 }
 .footer .fa-heart {
   color: #D23333;
+}
+
+.footer .fa-facebook-square {
+  color: #3B5998;
+}
+
+.footer .fa-instagram {
+  color: #262626;
+}
+
+.footer .fa-twitter {
+  color: #1DA1F2;
 }
