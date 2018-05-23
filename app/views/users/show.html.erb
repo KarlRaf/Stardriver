@@ -10,7 +10,7 @@
     <% end %>
     <ul>
       <% current_user.rockets.each do |rocket| %>
-        <li>Model : <%= rocket.model %>, with <%= rocket.capacity %> sits.
+        <li><%= rocket.display_info %>
           <% if policy(rocket).destroy? %>
             <%= link_to "Delete", rocket_path(rocket)  , method: :delete, data: {confirm: "are you sure you want to delete this rocket? This will destroy all the flights you planned with it aswell"} %>
           <% end %>

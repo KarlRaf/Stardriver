@@ -1,11 +1,27 @@
 class Rocket < ApplicationRecord
+  require 'json'
+
+  filepath = './db/swstarships.json'
+  serialized_starships = File.read(filepath)
+  starships = JSON.parse(serialized_starships)
+
+  ROCKETS = {}
+
+  starships["results"].each_with_index do |starship|
+    ROCKETS[starship["name"]] = {capacity: starship["passengers"], model: starship["model"]}
+  end
+
   belongs_to :user
   has_many :flights, dependent: :destroy
-  validates :capacity, :model, presence: true
+  validates :capacity, :model, :name, presence: true
   mount_uploader :photo, PhotoUploader
 
-  def diplay
-    str = "A model #{self.model} with #{self.capacity} sits."
+  def display_info
+    if self.name
+      str = "#{self.name}, a model #{self.model} with #{self.capacity} sits."
+    else
+      str = "An anonymous rocket, model #{self.model} with #{self.capacity} sits."
+    end
     return str
   end
 end

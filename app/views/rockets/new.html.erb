@@ -1,8 +1,8 @@
 <div class="container">
 <h1>Create a big fu**ing rocket</h1>
 <%= simple_form_for [@rocket] do |f| %>
-  <%= f.input :capacity %>
-  <%= f.input :model %>
+  <%= f.input :model, :collection => Rocket::ROCKETS %>
+  <%= f.input :name %>
   <%= f.input :photo %>
   <%= f.input :photo_cache, as: :hidden %>
   <%= f.submit %>

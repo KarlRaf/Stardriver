@@ -10,8 +10,9 @@ class RocketsController < ApplicationController
 
   def create
     @rocket = Rocket.new(rocket_params)
-    @user = current_user
-    @rocket.user = @user
+    @rocket.user = current_user
+    @rocket.model = Rocket::ROCKETS[params[:rocket][:model]][:model]
+    @rocket.capacity = Rocket::ROCKETS[params[:rocket][:model]][:capacity]
     authorize @rocket
     if @rocket.save
       redirect_to new_rocket_flight_path(@rocket)
@@ -52,7 +53,7 @@ class RocketsController < ApplicationController
   private
 
   def rocket_params
-    params.require(:rocket).permit(:capacity, :model, :user_id, :photo)
+    params.require(:rocket).permit(:name, :user_id, :photo)
   end
 
 end
