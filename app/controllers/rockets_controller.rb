@@ -48,13 +48,6 @@ class RocketsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-  def select
-    @rocket = Rocket.select(params[:id])
-    @user = current_user
-    @rocket.user = @user
-    authorize @rocket
-  end
-
   private
 
   def rocket_params

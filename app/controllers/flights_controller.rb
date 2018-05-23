@@ -11,17 +11,15 @@
   end
 
   def new
-    @rocket = Rocket.find(params[:rocket_id])
     @flight = Flight.new
   end
 
 
   def create
     @flight = Flight.new(flight_params)
-    @rocket = Rocket.find(params[:rocket_id])
+    @rocket = Rocket.find(flight_params[:rocket_id])
     @flight.rocket = @rocket
     if @flight.save
-      # should redirect to the dashboard, for now redirect to home page
       redirect_to new_flight_booking_path(@flight)
     else
       render :new
