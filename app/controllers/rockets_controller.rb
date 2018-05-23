@@ -48,7 +48,6 @@ class RocketsController < ApplicationController
     redirect_to user_path(current_user)
   end
 
-
   private
 
   def rocket_params
