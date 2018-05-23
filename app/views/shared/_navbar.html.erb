@@ -11,11 +11,10 @@
 
       <!-- Links when logged in -->
       <%= link_to "Add a rocket 🚀", new_rocket_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My mates 💪", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <% if current_user.rockets.exists? %>
-      <%= link_to "Fly now 🧚‍♂️", new_flight_path(current_user.rockets), class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Add a flight", new_flight_path(@rocket), class: "navbar-wagon-item navbar-wagon-link" %>
       <% end %>
-      <%= link_to "Sign in", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "My Bookings 🚀", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
