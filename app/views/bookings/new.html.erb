@@ -1,10 +1,27 @@
-<div class="container">
-  <h1>Confirm your booking</h1>
-  <h3>Destination: <%= @flight.destination %></h3>
-  <h3>Date: <%= @flight.date %></h3>
+<div class="medium-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url('https://source.unsplash.com/featured/?outerspace');">
+  <div class="banner-content">
+    <h1>Confirm your booking</h1>
+  </div>
+</div>
 
-  <%= simple_form_for [@flight, @booking] do |f| %>
-    <%= f.input :comments %>
-    <%= f.submit %>
-<% end %>
+
+<div class="container">
+
+  <div class="message">
+    <div class="message-name">
+      <h2><%= @flight.date %></h2>
+      <p>Date</p>
+    </div>
+    <div class="message-body">
+      <h2>From: <%= @flight.departure %> - To: <%= @flight.destination %></h2>
+      <p>Details about your flight: <%= @flight.description %></p>
+    </div>
+    <div class="message-status">
+        <%= simple_form_for [@flight, @booking] do |f| %>
+          <%= f.input :comments %>
+          <%= f.button :submit, class: 'btn btn-success' %>
+      <% end %>
+    </div>
+  </div>
+
 </div>

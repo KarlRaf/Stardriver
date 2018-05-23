@@ -1,25 +1,56 @@
+<div class="medium-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url('https://source.unsplash.com/featured/?outerspace');">
+  <div class="banner-content">
+    <h1>Flights available</h1>
+  </div>
+</div>
+
+
 <div class="container">
   <% if @flights.blank? %>
     <h4>Sorry, there are no flights matching to: <%= params[:search] %>.</h4>
   <% else %>
     <% @flights.each do |flight| %>
-    <div class="row">
-
-      <div class="col-sm-8 col-sm-offset-2">
-        <div class="card">
-          <% if @flights.blank? %>
-            <h4>Sorry, there are no flights matching to: <%= params[:search] %>.</h4>
-          <% else %>
-            <div class="card-description">
-              <%= link_to  flight_path(flight), class: "card-link" do %>
-              <% end %>
-          <h3><%= flight.destination %></h3>
-          <h4>Departure from <%= flight.departure  %> on <%= flight.date %></h4>
-          <p><%= flight.description %></p>
+      <% if @flights.blank? %>
+        <h4>Sorry, there are no flights matching to: <%= params[:search] %>.</h4>
+      <% else %>
+        <div class="message">
+          <div class="message-name">
+            <h2><%= flight.date %></h2>
+            <p>Date</p>
+          </div>
+          <div class="message-body">
+            <h2>From: <%= flight.departure %> - To: <%= flight.destination %></h2>
+            <p><%= flight.description %></p>
+          </div>
+          <div class="message-status">
+           <%= link_to "Check this flight!", flight_path(flight), class: 'btn btn-primary' %>
           </div>
         </div>
-        <% end %>
-      </div>
+      <% end %>
     <% end %>
   <% end %>
 </div>
+
+<!--
+  <div class="row">
+
+       <div class="col-sm-8 col-sm-offset-2">
+        <div class="card">
+          <%# if @flights.blank? %>
+            <h4>Sorry, there are no flights matching to: <%#= params[:search] %>.</h4>
+          <%# else %>
+            <div class="card-description">
+              <%#= link_to  flight_path(flight), class: "card-link" do %>
+              <%# end %>
+          <h3><%#= flight.destination %></h3>
+          <h4>Departure from <%#= flight.departure  %> on <%#= flight.date %></h4>
+          <p><%#= flight.description %></p>
+          </div>
+        </div>
+        <%# end %>
+      </div>
+    <%# end %>
+  <%# end %>
+</div>
+
+ -->
