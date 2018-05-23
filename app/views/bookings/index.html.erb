@@ -42,7 +42,7 @@
             <% if booking.flight.rocket.user.id == current_user.id %>
               <div class="message">
                 <div class="message-name">
-                  <h2><%= booking.flight.date %>Date</h2>
+                  <h2><%= booking.flight.date %></h2>
                   <p>Date</p>
                 </div>
                 <div class="message-body">
@@ -51,7 +51,12 @@
                 </div>
                 <div class="message-status">
                   <p class="status"><%= booking.status %></p>
-                  <%= link_to 'Accept passenger', validates_path(booking), method: :patch, class: 'btn btn-success' %>
+                  <% if booking.status == "Accepted" %>
+                    <%= link_to 'Cancel passenger', refuses_path(booking), method: :patch, class: 'btn btn-warning' %>
+                  <% else %>
+                  <%= link_to 'Accept', validates_path(booking), method: :patch, class: 'btn btn-success' %>
+                  <%= link_to 'Refuse', refuses_path(booking), method: :patch, class: 'btn btn-warning' %>
+                  <% end %>
                 </div>
               </div>
             <% end %>
