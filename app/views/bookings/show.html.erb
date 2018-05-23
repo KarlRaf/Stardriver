@@ -1,4 +1,4 @@
-<div class="medium-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1517976547714-720226b864c1?ixlib=rb-0.3.5&s=44ef7f198828fa8005ef23032926c29d&auto=format&fit=crop&w=1050&q=80');">
+<div class="medium-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1457979406492-d1e6b97f3f55?ixlib=rb-0.3.5&s=df633aa537ab522c5e97ccae06fa3ad8&auto=format&fit=crop&w=1050&q=80');">
   <div class="banner-content">
     <h1>Booking details</h1>
   </div>
@@ -6,16 +6,24 @@
 
 <div class="container">
 
-  <h2>Your booking's destination is: <%= @booking.flight.destination %> </h2>
-  <h2>Your booking's date is: <%= @booking.flight.date %> </h2>
-  <h2>Your booking's status is: <%= @booking.status %></h2>
+  <div class="message">
+    <div class="message-name">
+      <h2><%= @booking.flight.date %></h2>
+      <p>Date</p>
+    </div>
+    <div class="message-body">
+      <h2>From: <%= @booking.flight.departure %> - To: <%= @booking.flight.destination %></h2>
+      <p>Comments: <%= @booking.comments %> </p>
+    </div>
+    <div class="message-status">
+      <p class="status"><%= @booking.status %></p>
+      <%= link_to 'Accept passenger', validates_path(@booking), method: :patch, class: 'btn btn-success' %>
+    </div>
+  </div>
 
-  <%= link_to 'Accept passenger', validates_path(@booking), method: :patch, class: 'btn btn-primary' %>
 
-  <%= link_to "Check flight's details", flight_path(@booking.flight) %>
+  <%= link_to "Check flight's details", flight_path(@booking.flight), class: 'btn btn-primary' %>
 
-  <%= link_to "Check rocket's details", rocket_path(@booking.flight.rocket) %>
-
-  <h3>Comments: <%= @booking.comments %> </h3>
+  <%= link_to "Check rocket's details", rocket_path(@booking.flight.rocket), class: 'btn btn-primary' %>
 
 </div>

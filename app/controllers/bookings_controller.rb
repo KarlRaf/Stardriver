@@ -33,19 +33,21 @@ class BookingsController < ApplicationController
     redirect_to bookings_path
   end
 
+  # CHANGED TO VALIDATE USER DIRECTLY FROM INDEX
   def validates_user
     @booking = Booking.find(params[:id])
     @booking.status = "Accepted"
     @booking.save
-    redirect_to booking_path(@booking)
+    redirect_to bookings_path
   end
 
-  def refuses_user
-    @booking = Booking.find(params[:id])
-    @booking.status = "Declined"
-    @booking.save
-    redirect_to booking_path(@booking)
-  end
+  # NOT IN USE
+  # def refuses_user
+  #   @booking = Booking.find(params[:id])
+  #   @booking.status = "Declined"
+  #   @booking.save
+  #   redirect_to booking_path(@booking)
+  # end
 
   private
 
