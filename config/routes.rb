@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: :show
   resources :flights
   resources :rockets do
-    resources :flights
+    resources :flights, controller: 'rockets/flights'
   end
   resources :flights do
     resources :bookings, only: [:index, :show, :new, :create, :destroy]
@@ -12,4 +12,5 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :show]
   patch 'flights/flights_id/bookings/:id', to: 'bookings#validates_user', as: :validates
+
 end

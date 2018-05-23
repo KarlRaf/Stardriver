@@ -1,6 +1,6 @@
 .banner {
   text-align: center;
-  height: 100vh;
+  height: calc(100vh - 70px);
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -67,4 +67,10 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+.content {
+  margin-top: 25px;
+}
+.container-min-height {
+  min-height: calc(100vh - 140px)
 }

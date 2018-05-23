@@ -10,10 +10,12 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+      <%= link_to "All flights", flights_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Add a rocket 🚀", new_rocket_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "My mates 💪", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Fly now 🧚‍♂️", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Sign in", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <% if current_user.rockets.exists? %>
+      <%= link_to "Add a flight", new_flight_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
+      <%= link_to "My Bookings", bookings_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
