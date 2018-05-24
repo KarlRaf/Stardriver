@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
   def create
     @flight = Flight.find(params[:flight_id])
     @booking = Booking.new(booking_params)
-    @booking.status = "pending"
+    @booking.status = "Pending"
     @booking.flight = @flight
     @booking.user = current_user
     if @booking.save

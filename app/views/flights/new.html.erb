@@ -1,19 +1,21 @@
-<div class="medium-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url('https://source.unsplash.com/featured/?outerspace');">
-  <div class="banner-content">
-    <h1>Create a flight</h1>
+<div class="background-img">
+
+  <div class="form">
+
+    <div class="form-title">
+      <h1>Create a flight</h1>
+    </div>
+
+    <div class="form-table">
+      <%= simple_form_for @flight do |f| %>
+        <%= f.input :destination %>
+        <%= f.input :departure %>
+        <%= f.input :description %>
+        <%= f.association :rocket, collection: current_user.rockets, label_method: :model, include_blank: false %>
+        <%= f.input :date , as: :date, html5: true %>
+        <%= f.button :submit, class: 'btn-form' %>
+      <% end %>
+    </div>
+
   </div>
-</div>
-
-
-<div class="container">
-
-<h1>Create a flight</h1>
-<%= simple_form_for @flight do |f| %>
-  <%= f.input :destination %>
-  <%= f.input :departure %>
-  <%= f.input :description %>
-  <%= f.association :rocket, collection: current_user.rockets, label_method: :model %>
-  <%= f.input :date , as: :date, html5: true %>
-  <%= f.button :submit, class: 'btn btn-success' %>
-<% end %>
 </div>

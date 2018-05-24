@@ -14,7 +14,8 @@
 }
 .message-name {
   padding-left: 10px;
-  padding-right: 10px;
+  padding-right: 20px;
+  margin-right: 10px;
   min-width: 100px;
 }
 .message-name h3 {
@@ -24,7 +25,7 @@
 }
 .message-name h2 {
   color: black;
-  font-size: 32px;
+  font-size: 28px;
   margin-bottom: 0px;
 }
 .message-name p {
@@ -34,8 +35,8 @@
 }
 
 .message-body {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .message-body p {
@@ -50,14 +51,33 @@
 }
 .message-body h2 {
   color: black;
-  font-size: 32px;
+  font-size: 28px;
   margin-bottom: 0px;
 }
 .message-status {
   font-size: 16px;
   font-weight: bold;
-  color: $medium-gray;
+  color: dark-gray;
 }
+
+.grid-btns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  .btn-cancels {
+    grid-row: 2 / span 1;
+  }
+  .btn-details {
+    grid-row: 2 / span 1;
+  }
+  .status {
+    text-align: center;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+  }
+}
+
+
 // .status.accepted {
 //   color: #04A366;
 // }
