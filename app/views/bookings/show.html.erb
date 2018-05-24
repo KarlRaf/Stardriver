@@ -31,7 +31,7 @@
         </div>
       </div>
     </div>
-  <% else %>
+  <% elsif current_user == @booking.user %>
     <div class="message-details">
       <div class="message-body">
         <h2>Departure date</h2>
@@ -49,9 +49,11 @@
     <div class="message">
       <div class="message-body">
         <h2>🚀 : <%= @booking.flight.rocket.name %></h2>
-        <%= cl_image_tag("#{@booking.flight.rocket.photo}",
-              width: 400, height: 300, crop: :fill) %>
         <p>Model: <%= @booking.flight.rocket.model %></p>
+        <%= cl_image_tag("#{@booking.flight.rocket.photo}",
+              crop: :fill, class: "rocket-pic-booking") %>
+        </div>
+        <div class="message-body">
         <h3>Pilot: <%= @booking.flight.rocket.user.name %></h3>
       </div>
 
