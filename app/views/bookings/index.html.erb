@@ -22,15 +22,16 @@
         <% @bookings.each do |booking| %>
           <div class="message">
             <div class="message-name">
-              <h2><%= booking.flight.date.strftime('%a %e %b %Y') %></h2>
-              <p>Date</p>
+              <h2>Departure date</h2>
+              <h3><%= booking.flight.date.strftime('%a %e %b %Y') %></h3>
             </div>
             <div class="message-body">
-              <h2>🛫 <%= booking.flight.departure %> 🚀 <%= booking.flight.destination %> 🛬</h2>
+              <h2>🛫 <%= booking.flight.departure %></h2>
+              <h2>🛬 <%= booking.flight.destination %></h2>
               <p>Booking reference: <%= booking.id %></p>
             </div>
             <div class="message-body">
-              <h2>On the <%= booking.flight.rocket.name %></h2>
+              <h2>🚀 : <%= booking.flight.rocket.name %></h2>
               <p>Model: <%= booking.flight.rocket.model %></p>
               <h3>Pilot: <%= booking.flight.rocket.user.name %></h3>
 
