@@ -4,6 +4,32 @@
   </div>
 </div>
 
+
+<div class="container">
+      <div class="profile text-center">
+        <div class="main">
+          <div class="main-content">
+            <h2><%= @flight.rocket.user.name %></h2>
+            <p>Stardriver</p>
+            <a href="#" class="btn btn-danger btn-lg">Book this now</a>
+          </div>
+        </div>
+        <div class="stat">
+         <h2> Date: <%= @flight.date %> </h2>
+          <h2>From: <%= @flight.departure %> - To: <%= @flight.destination %></h2>
+          </div>
+        <div class="description">
+          <div class="description-content">
+            <h3>More about <%= @flight.rocket.user.name %></h3>
+            <p class="text-justify">
+              <%=@flight.rocket.user.bio %>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 <div class="container">
 
   <div class="message">
@@ -20,6 +46,3 @@
     </div>
   </div>
 </div>
-
-
-
