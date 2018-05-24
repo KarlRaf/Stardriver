@@ -6,10 +6,9 @@
 
 
 <div class="container">
-  <% if @flights.blank? %>
-    <h4>Sorry, there are no flights matching to: <%= params[:search] %>.</h4>
-  <% else %>
-    <% @flights.each do |flight| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <% @flights.each do |flight| %>
       <% if @flights.blank? %>
         <h4>Sorry, there are no flights matching to: <%= params[:search] %>.</h4>
       <% else %>
@@ -26,9 +25,10 @@
            <%= link_to "Check this flight!", flight_path(flight), class: 'btn btn-primary' %>
           </div>
         </div>
+        <% end %>
       <% end %>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
 </div>
 
 <!--

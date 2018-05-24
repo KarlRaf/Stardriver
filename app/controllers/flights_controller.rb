@@ -4,7 +4,7 @@
 
   def index
     if params[:search].present?
-      @flights = Flight.where(destination: params[:search])
+      @flights = Flight.where("destination ILIKE :search OR departure ILIKE :search", search: "%#{params[:search]}%")
     else
       @flights = Flight.all
     end
@@ -20,7 +20,7 @@
     @rocket = Rocket.find(flight_params[:rocket_id])
     @flight.rocket = @rocket
     if @flight.save
-      redirect_to new_flight_booking_path(@flight)
+      redirect_to bookings_path
     else
       render :new
     end

@@ -1,11 +1,12 @@
 <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1462332420958-a05d1e002413?ixlib=rb-0.3.5&s=ccf4da3008d853bf39f0642481306991&auto=format&fit=crop&w=1040&q=80);">
     <div class="banner-content">
-      <h1>Stardriver</h1>
-      <h2>To infinity and beyond!</h2>
-      <%= form_tag(flights_path, method: :get) do %>
-        <%= text_field_tag(:search, params[:search], placeholder: "Search a Flight") %>
-        <%= submit_tag ("Go!") %>
-      <% end %>
+      <h1 class="ml3">Stardriver</h1>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+      <h2 class="ml3">To infinity and beyond!</h2>
+          <%= form_tag(flights_path, method: :get) do |f| %>
+            <%= text_field_tag(:search, params[:search], placeholder: "Where do you want to go?", class: "input") %>
+            <%= submit_tag "Go", class: "input" %>
+          <% end %>
     </div>
 </div>
 <div class="container">
@@ -19,7 +20,7 @@
           <p>One of the best destinations</p>
         </div>
         <img class="card-user" src="">
-        <a class="card-link" href="#" ></a>
+        <a class="card-link" href="/flights" ></a>
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
@@ -30,7 +31,7 @@
           <p>One of the best destinations</p>
         </div>
         <img class="card-user" src="">
-        <a class="card-link" href="#" ></a>
+        <a class="card-link" href="/flights" ></a>
       </div>
     </div>
     <div class="col-xs-12 col-sm-4">
@@ -41,7 +42,42 @@
           <p>One of the best destinations</p>
         </div>
         <img class="card-user" src="">
-        <a class="card-link" href="#" ></a>
+        <a class="card-link" href="/flights" ></a>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: url(https://images.unsplash.com/photo-1504333638930-c8787321eee0?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=00e046731d751a3f1c7d176eb3ff4769&auto=format&fit=crop&w=1650&q=80);">
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+          <h2>Death Star</h2>
+          <p>One of the best destinations</p>
+        </div>
+        <img class="card-user" src="">
+        <a class="card-link" href="/flights" ></a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: url(https://images.unsplash.com/photo-1516533075015-a3838414c3ca?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bdabc32fea07dca2e9f0330daee10e08&auto=format&fit=crop&w=1650&q=80);">
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+          <h2>Coruscant</h2>
+          <p>One of the best destinations</p>
+        </div>
+        <img class="card-user" src="">
+        <a class="card-link" href="/flights" ></a>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: url(https://images.unsplash.com/photo-1506535772317-9fdb71c959c6?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d643eb93bc4bcd091001c839cc994de9&auto=format&fit=crop&w=668&q=80);">
+        <div class="card-category">Popular</div>
+        <div class="card-description">
+          <h2>Naboo</h2>
+          <p>One of the best destinations</p>
+        </div>
+        <img class="card-user" src="">
+        <a class="card-link" href="/flights" ></a>
       </div>
     </div>
   </div>

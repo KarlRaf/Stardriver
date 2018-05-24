@@ -4,8 +4,6 @@
   </div>
 </div>
 
-
-
 <div class="container">
 
   <div class="message">
@@ -18,9 +16,10 @@
       <p><%= @flight.description %></p>
     </div>
     <div class="message-status">
-     <%= link_to "Book this flight!", new_flight_booking_path(@flight), class: 'btn btn-success' %>
+     <%= link_to "Book this flight", new_flight_booking_path(@flight), class: 'btn btn-success' %>
     </div>
   </div>
+</div>
 
 
 

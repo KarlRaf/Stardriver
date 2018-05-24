@@ -1,7 +1,9 @@
-<div class="medium-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1503751071777-d2918b21bbd9?ixlib=rb-0.3.5&s=cf09e49d47f6513c52cff126d013d2a8&auto=format&fit=crop&w=1050&q=80">
+<div class="medium-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1503751071777-d2918b21bbd9?ixlib=rb-0.3.5&s=cf09e49d47f6513c52cff126d013d2a8&auto=format&fit=crop&w=1050&q=80');">
+  <div class="banner-content">
     <h1>Your next bookings</h1>
   </div>
 </div>
+
 
 <div class="container">
   <div>
@@ -9,7 +11,9 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
       <li role="presentation" class="active"><a href="#traveler" aria-controls="traveler" role="tab" data-toggle="tab">Traveler</a></li>
+      <% if current_user.rockets %>
       <li role="presentation"><a href="#pilot" aria-controls="pilot" role="tab" data-toggle="tab">Pilot</a></li>
+      <% end %>
     </ul>
 
     <!-- Tab panes -->
@@ -32,12 +36,13 @@
             </div>
           <% end %>
       </div>
+      <% if current_user.rockets %>
       <div role="tabpanel" class="tab-pane" id="pilot">
-          <% @bookings.each do |booking| %>
-            <% if booking.flight.rocket.user_id == current_user.id %>
+          <% @mepilot.each do |booking| %>
+            <% if booking.flight.rocket.user.id == current_user.id %>
               <div class="message">
                 <div class="message-name">
-                  <h2><%= booking.flight.date %>Date</h2>
+                  <h2><%= booking.flight.date %></h2>
                   <p>Date</p>
                 </div>
                 <div class="message-body">
@@ -46,12 +51,18 @@
                 </div>
                 <div class="message-status">
                   <p class="status"><%= booking.status %></p>
-                  <%= link_to 'Accept passenger', validates_path(booking), method: :patch, class: 'btn btn-success' %>
+                  <% if booking.status == "Accepted" %>
+                    <%= link_to 'Cancel passenger', refuses_path(booking), method: :patch, class: 'btn btn-warning' %>
+                  <% else %>
+                  <%= link_to 'Accept', validates_path(booking), method: :patch, class: 'btn btn-success' %>
+                  <%= link_to 'Refuse', refuses_path(booking), method: :patch, class: 'btn btn-warning' %>
+                  <% end %>
                 </div>
               </div>
             <% end %>
           <% end %>
       </div>
+      <% end %>
     </div>
 
   </div>

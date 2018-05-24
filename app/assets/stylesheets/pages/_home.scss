@@ -15,7 +15,7 @@
 .banner h2 {
   color: white;
   font-size: 25px;
-  font-weight: lighter;
+  font-weight: normal;
   color: rgb(255, 255, 255);
   opacity: 0.6;
   margin-bottom: 30px;
@@ -71,6 +71,23 @@
 .content {
   margin-top: 25px;
 }
-.container-min-height {
-  min-height: calc(100vh - 140px)
+.content-min-height {
+  min-height: calc(100vh - 140px);
+}
+.row {
+  margin-top: 20px;
+}
+.input{
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  background: rgba(0, 0, 0, 0);
+  border: solid white 1px;
+  outline: none;
+  color: white;
+  border-radius: 3px;
+}
+.ml3 {
+  font-weight: 900;
+  font-size: 3.5em;
 }
