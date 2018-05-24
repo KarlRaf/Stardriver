@@ -10,7 +10,7 @@ anime.timeline({loop: true})
     targets: '.ml3 .letter',
     opacity: [0,1],
     easing: "easeInOutQuad",
-    duration: 2250,
+    duration: 2100,
     delay: function(el, i) {
       return 150 * (i+1)
     }
@@ -19,6 +19,6 @@ anime.timeline({loop: true})
     opacity: 0,
     duration: 1000,
     easing: "easeOutExpo",
-    delay: 1000
+    delay: 100000
   });
 
