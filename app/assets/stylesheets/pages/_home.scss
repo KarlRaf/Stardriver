@@ -15,7 +15,7 @@
 .banner h2 {
   color: white;
   font-size: 25px;
-  font-weight: lighter;
+  font-weight: normal;
   color: rgb(255, 255, 255);
   opacity: 0.6;
   margin-bottom: 30px;
@@ -85,4 +85,9 @@
   border: solid white 1px;
   outline: none;
   color: white;
+  border-radius: 3px;
+}
+.ml3 {
+  font-weight: 900;
+  font-size: 3.5em;
 }
