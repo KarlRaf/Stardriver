@@ -1,12 +1,12 @@
 import swal from 'sweetalert';
 
-function bindSweetAlertButtonDemo() {
+function bindSweetAlertButtonDemo(title) {
   const sweetalert = document.querySelector('.sweet-alert')
   if ( sweetalert ) {
   sweetalert.addEventListener('click', () => {
     swal({
-      title: "A nice alert",
-      text: "This is a great alert, isn't it?",
+      title: title,
+      text: "Major Tom to ground control, isn't it?",
       icon: "success"
     })
   });
