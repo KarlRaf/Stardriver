@@ -6,13 +6,13 @@
       <h1>Create a big fu**ing rocket</h1>
     </div>
 
-    <div class="form-table">
+    <div class="form-table" data-index-number="12314">
       <%= simple_form_for [@rocket] do |f| %>
         <%= f.input :model, :collection => Rocket::ROCKETS, include_blank: false %>
         <%= f.input :name %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
-        <%= f.button :submit, class: 'btn-form' %>
+        <%= f.button :submit, class: 'btn-form sweet-alert' %>
       <% end %>
     </div>
   </div>
