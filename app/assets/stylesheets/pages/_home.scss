@@ -27,6 +27,7 @@
   background-position: center;
   color: white;
   position: relative;
+  margin-bottom: 25px;
 }
 .card-user {
   position: absolute;
@@ -41,6 +42,7 @@
   left: 10px;
   font-size: 15px;
   text-transform: uppercase;
+  font-size: 12px;
 }
 .card-description {
   position: absolute;
@@ -86,6 +88,7 @@
   outline: none;
   color: white;
   border-radius: 3px;
+  width: 212px;
 }
 .ml3 {
   font-weight: 900;
