@@ -15,6 +15,7 @@ class RocketsController < ApplicationController
     @rocket.capacity = Rocket::ROCKETS[params[:rocket][:model]][:capacity]
     authorize @rocket
     if @rocket.save
+      # flash = "It is working!"
       redirect_to new_rocket_flight_path(@rocket)
     else
       render :new
