@@ -4,24 +4,23 @@
   </div>
 </div>
 
-
 <div class="container">
-
-  <div class="message">
-    <div class="message-name">
-      <h2><%= @flight.date %></h2>
-      <p>Date</p>
-    </div>
-    <div class="message-body">
-      <h2>From: <%= @flight.departure %> - To: <%= @flight.destination %></h2>
-      <p>Details about your flight: <%= @flight.description %></p>
-    </div>
-    <div class="message-status">
-        <%= simple_form_for [@flight, @booking] do |f| %>
-          <%= f.input :comments %>
-          <%= f.button :submit, class: 'btn btn-success' %>
-      <% end %>
+  <div class="col-xs-12">
+    <div class="message">
+      <div class="message-name">
+        <h2><%= @flight.date %></h2>
+        <p>Date</p>
+      </div>
+      <div class="message-body">
+        <h2>From: <%= @flight.departure %> - To: <%= @flight.destination %></h2>
+        <p>Details about your flight: <%= @flight.description %></p>
+      </div>
+      <div class="message-status">
+          <%= simple_form_for [@flight, @booking] do |f| %>
+            <%= f.input :comments %>
+            <%= f.button :submit, class: 'btn btn-success' %>
+        <% end %>
+      </div>
     </div>
   </div>
-
 </div>

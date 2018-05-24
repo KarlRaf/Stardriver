@@ -1,7 +1,8 @@
 <div class="banner" style="background-image: url(https://images.unsplash.com/photo-1462332420958-a05d1e002413?ixlib=rb-0.3.5&s=ccf4da3008d853bf39f0642481306991&auto=format&fit=crop&w=1040&q=80);">
     <div class="banner-content">
-      <h1>Stardriver</h1>
-      <h2>To infinity and beyond!</h2>
+      <h1 class="ml3">Stardriver</h1>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+      <h2 class="ml3">To infinity and beyond!</h2>
           <%= form_tag(flights_path, method: :get) do |f| %>
             <%= text_field_tag(:search, params[:search], placeholder: "Where do you want to go?", class: "input") %>
             <%= submit_tag "Go", class: "input" %>
