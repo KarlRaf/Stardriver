@@ -16,7 +16,7 @@
       <% @flights.each do |flight| %>
         <div class="col-xs-12 col-sm-4">
           <div class="card" style="background-image: url(https://images.unsplash.com/photo-1446553009413-64b9505cacb0?ixlib=rb-0.3.5&s=91fcefe4d6cd2ee0ecee3207b2eed274&auto=format&fit=crop&w=1650&q=80);">
-            <div class="card-category"> Rocket model:  </div>
+            <div class="card-category"> Rocket model: <%= flight.rocket.model %> </div>
             <div class="card-description">
               <ul>
                 <li><h4>From: <%= flight.departure %> </h4></li>
@@ -25,7 +25,7 @@
               <p>Price:</p>
             </div>
             <img class="card-user" src="">
-            <a class="card-link" href="/flight" ></a>
+            <a class="card-link" href="/flights/<%= flight.id %>" ></a>
           </div>
         </div>
       <% end %>
