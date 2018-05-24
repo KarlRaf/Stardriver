@@ -5,24 +5,61 @@
 </div>
 
 <div class="container">
+  <% if current_user == @booking.flight.rocket.user %>
+    <div class="message">
+      <div class="message-name">
+        <h2>Departure date</h2>
+        <h3><%= @booking.flight.date.strftime('%a %e %b %Y') %></h3>
+      </div>
+      <div class="message-body">
+        <h2>🛫 <%= @booking.flight.departure %></h2>
+        <h2>🛬 <%= @booking.flight.destination %></h2>
+        <p>Booking reference: <%= @booking.id %></p>
+      </div>
+      <div class="message-body">
+        <h2>🚀 : <%= @booking.flight.rocket.name %></h2>
+        <p>Model: <%= @booking.flight.rocket.model %></p>
+        <h3>Pilot: <%= @booking.flight.rocket.user.name %></h3>
 
-  <div class="message">
-    <div class="message-name">
-      <h2><%= @booking.flight.date %></h2>
-      <p>Date</p>
+      </div>
+      <div class="message-status">
+        <div class="grid-btns">
+          <h3 class="status"><%= @booking.status %></h3>
+          <div class="btn-cancels">
+            <%= link_to "Cancel", flight_booking_path(@booking.flight, @booking), method: :delete, class: 'btn btn-danger', data: {confirm: "are you sure you want to delete this booking?"} %>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="message-body">
-      <h2>From: <%= @booking.flight.departure %> - To: <%= @booking.flight.destination %></h2>
-      <p>Comments: <%= @booking.comments %> </p>
+  <% else %>
+    <div class="message-details">
+      <div class="message-body">
+        <h2>Departure date</h2>
+        <h3><%= @booking.flight.date.strftime('%a %e %b %Y') %></h3>
+      </div>
+      <div class="message-body">
+        <h2>🛫 <%= @booking.flight.departure %></h2>
+        <h2>🛬 <%= @booking.flight.destination %></h2>
+        <p>Booking reference: <%= @booking.id %></p>
+      </div>
+      <div class="message-status message-body">
+        <h2 class="status">Status: <%= @booking.status %></h2>
+      </div>
     </div>
-    <div class="message-status">
-      <p class="status"><%= @booking.status %></p>
-      <%= link_to 'Accept passenger', validates_path(@booking), method: :patch, class: 'btn btn-success' %>
+    <div class="message">
+      <div class="message-body">
+        <h2>🚀 : <%= @booking.flight.rocket.name %></h2>
+        <%= cl_image_tag("#{@booking.flight.rocket.photo}",
+              width: 400, height: 300, crop: :fill) %>
+        <p>Model: <%= @booking.flight.rocket.model %></p>
+        <h3>Pilot: <%= @booking.flight.rocket.user.name %></h3>
+      </div>
+
     </div>
-  </div>
+  <% end %>
 
 
-  <%= link_to "Check flight's details", flight_path(@booking.flight), class: 'btn btn-primary' %>
+  <%= link_to "Check flight offer", flight_path(@booking.flight), class: 'btn btn-primary' %>
 
   <%= link_to "Check rocket's details", rocket_path(@booking.flight.rocket), class: 'btn btn-primary' %>
 

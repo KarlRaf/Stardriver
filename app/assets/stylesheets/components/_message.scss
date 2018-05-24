@@ -77,7 +77,20 @@
   }
 }
 
+.message-details {
+  display: flex;
+  align-items: center;
+  // flex-wrap: wrap;
+  margin: 15px;
+  padding: 20px;
+  border-bottom: 1px solid $medium-gray;
+  justify-content: space around;
 
+  .message-body {
+    text-align: center;
+    flex : 1 0 0;
+  }
+}
 // .status.accepted {
 //   color: #04A366;
 // }
