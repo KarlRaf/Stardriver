@@ -1,0 +1,13 @@
+.profile {
+  display: table;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+  background-size: cover;
+}
+
+.profile-inner {
+  display: table-cell;
+  vertical-align: middle;
+}
