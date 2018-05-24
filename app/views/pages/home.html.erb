@@ -8,13 +8,13 @@
           <% end %>
     </div>
 </div>
-<h2>Our Latest Flights. Board in Now!</h2>
+<h2 class="ml3">Board in Now</h2>
 <div class="container">
   <div class="content">
     <div class="row">
       <% @flights.each do |flight| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: url(https://unsplash.com/collections/1026767/space);">
+          <div class="card" style="background-image: url(https://images.unsplash.com/photo-1516331138075-f3adc1e149cd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a1bca94717c3a2c1c721a72da13d63f&auto=format&fit=crop&w=1683&q=80);">
             <div class="card-category"> Rocket model: <%= flight.rocket.model %> </div>
             <div class="card-description">
               <ul>
