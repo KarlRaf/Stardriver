@@ -1,4 +1,6 @@
 import "bootstrap";
+import "../plugins/flatpickr"
+
 
 // Wrap every letter in a span
 $('.ml3').each(function(){
@@ -21,4 +23,5 @@ anime.timeline({loop: true})
     easing: "easeOutExpo",
     delay: 1000
   });
+
 

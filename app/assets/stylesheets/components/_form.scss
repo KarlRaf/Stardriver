@@ -1,11 +1,9 @@
 .form {
   padding: 30px;
-  background: $white none repeat scroll 0% 0% !important;
+  background: $white none repeat scroll 0% 0%;
   border-radius: 4px;
   padding: 24px;
   width: 40% ;
-  margin-top: 8px ;
-  margin-bottom: 24px;
   opacity: 0.8;
 }
 
@@ -59,3 +57,8 @@
 }
 
 
+.input[readonly] {
+  color: $text-black;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
