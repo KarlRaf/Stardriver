@@ -2,10 +2,9 @@
     <div class="banner-content">
       <h1 class="ml3">Stardriver</h1>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-      <h2 class="ml3">To infinity and beyond!</h2>
+      <h2 class="ml3">To infinity and beyond</h2>
           <%= form_tag(flights_path, method: :get) do |f| %>
             <%= text_field_tag(:search, params[:search], placeholder: "Where do you want to go?", class: "input") %>
-            <%= submit_tag "Go", class: "input" %>
           <% end %>
     </div>
 </div>
@@ -15,14 +14,13 @@
     <div class="row">
       <% @flights.each do |flight| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: url(https://images.unsplash.com/photo-1446553009413-64b9505cacb0?ixlib=rb-0.3.5&s=91fcefe4d6cd2ee0ecee3207b2eed274&auto=format&fit=crop&w=1650&q=80);">
+          <div class="card" style="background-image: url(https://unsplash.com/collections/1026767/space);">
             <div class="card-category"> Rocket model: <%= flight.rocket.model %> </div>
             <div class="card-description">
               <ul>
                 <li><h4>From: <%= flight.departure %> </h4></li>
                 <li><h4>To: <%= flight.destination %>  </h4></li>
               </ul>
-              <p>Price:</p>
             </div>
             <img class="card-user" src="">
             <a class="card-link" href="/flights/<%= flight.id %>" ></a>
