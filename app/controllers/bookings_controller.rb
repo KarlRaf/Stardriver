@@ -2,6 +2,10 @@ class BookingsController < ApplicationController
 
   def index
     @bookings = Booking.where(user_id: current_user)
+    @mepilot = []
+    Booking.all.each do |booking|
+      @mepilot << booking if booking.flight.rocket.user == current_user
+    end
   end
 
   def show
@@ -42,12 +46,12 @@ class BookingsController < ApplicationController
   end
 
   # NOT IN USE
-  # def refuses_user
-  #   @booking = Booking.find(params[:id])
-  #   @booking.status = "Declined"
-  #   @booking.save
-  #   redirect_to booking_path(@booking)
-  # end
+  def refuses_user
+    @booking = Booking.find(params[:id])
+    @booking.status = "Declined"
+    @booking.save
+    redirect_to bookings_path
+  end
 
   private
 

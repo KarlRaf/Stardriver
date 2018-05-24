@@ -1,28 +1,47 @@
 .footer {
-  background: #F4F4F4;
+  background: #E8E8E8;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 65px;
   padding: 0px 50px;
+  margin-top: 11px;
   color: rgba(0,0,0,0.3);
-  bottom: 0;
-  position: absolute;
 }
+
 .footer-links {
   display: flex;
   align-items: center;
 }
+
 .footer-links a {
   color: black;
-  opacity: 0.15;
+  opacity: 0.4;
   text-decoration: none;
   font-size: 24px;
   padding: 0px 10px;
 }
+
 .footer-links a:hover {
   opacity: 1;
 }
+
 .footer .fa-heart {
   color: #D23333;
+}
+
+.footer .fa-facebook-square {
+  color: #3B5998;
+}
+
+.footer .fa-instagram {
+  color: #262626;
+}
+
+.footer .fa-twitter {
+  color: #1DA1F2;
+}
+
+.form-control {
+  font-weight: normal;
 }

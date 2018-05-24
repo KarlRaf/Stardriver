@@ -6,10 +6,8 @@
 
 
 <div class="container">
-  <% if @flights.blank? %>
-    <h4>Sorry, there are no flights matching to: <%= params[:search] %>.</h4>
-  <% else %>
-    <% @flights.each do |flight| %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
       <% if @flights.blank? %>
         <h4>Sorry, there are no flights matching to: <%= params[:search] %>.</h4>
       <% else %>
@@ -27,8 +25,8 @@
           </div>
         </div>
       <% end %>
-    <% end %>
-  <% end %>
+    </div>
+  </div>
 </div>
 
 <!--

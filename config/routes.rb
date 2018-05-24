@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   resources :bookings, only: [:index, :show]
   patch 'flights/flights_id/bookings/:id', to: 'bookings#validates_user', as: :validates
+  patch 'flights/flights_id/bookings/:id/refuses', to: 'bookings#refuses_user', as: :refuses
 
 end
