@@ -17,4 +17,5 @@ require 'faker'
   rocket.user = user
   rocket.save!
   flight = Flight.create!(date: Faker::BackToTheFuture.date, destination: Faker::StarWars.planet, departure: Faker::StarTrek.location, description: Faker::StarWars.quote, rocket: rocket)
+  puts "Seeded!"
 end

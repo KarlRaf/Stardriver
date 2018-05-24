@@ -3,9 +3,12 @@
   align-items: center;
   padding: 20px;
   border-bottom: 1px solid $medium-gray;
+  margin: 10px;
+  color: white;
 }
 .message:last-child {
   border-bottom: none;
+  margin-bottom: none;
 }
 .message-body {
   flex-grow: 1;
@@ -16,17 +19,17 @@
   min-width: 100px;
 }
 .message-name h3 {
-  color: black;
+  // color: black;
   font-size: 24px;
   margin-bottom: 0px;
 }
 .message-name h2 {
-  color: black;
-  font-size: 32px;
+  // color: black;
+  font-size: 28px;
   margin-bottom: 0px;
 }
 .message-name p {
-  color: $medium-gray;
+  color: $light-gray;
   margin: 6px 0;
   font-size: 16px;
 }
@@ -37,24 +40,24 @@
 }
 
 .message-body p {
-  color: $medium-gray;
+  color: $light-gray;
   margin: 6px 0;
   font-size: 16px;
 }
 .message-body h3 {
-  color: black;
+  // color: black;
   font-size: 24px;
   margin-bottom: 0px;
 }
 .message-body h2 {
-  color: black;
-  font-size: 32px;
+  // color: black;
+  font-size: 28px;
   margin-bottom: 0px;
 }
 .message-status {
   font-size: 16px;
   font-weight: bold;
-  color: $medium-gray;
+  color: $light-gray;
 }
 // .status.accepted {
 //   color: #04A366;

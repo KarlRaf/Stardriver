@@ -20,14 +20,21 @@
     <div class="tab-content">
       <div role="tabpanel" class="tab-pane active" id="traveler">
           <% @bookings.each do |booking| %>
-            <div class="message">
+
+            <div class="message" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.3) 0%, rgba(0,36,61,0.6) 50%), url(<% booking.flight.rocket.photo %>)">
               <div class="message-name">
-                <h2><%= booking.flight.date %></h2>
+                <h2><%= booking.flight.date.strftime('%a %e %b %Y') %></h2>
                 <p>Date</p>
               </div>
               <div class="message-body">
-                <h2>From: <%= booking.flight.departure %> - To: <%= booking.flight.destination %></h2>
-                <p>Booking number: <%= booking.id %></p>
+                <h2>🛫 <%= booking.flight.departure %> 🚀 <%= booking.flight.destination %> 🛬</h2>
+                <p>Booking reference: <%= booking.id %></p>
+              </div>
+              <div class="message-body">
+                <h2>On the <%= booking.flight.rocket.name %></h2>
+                <p>Model: <%= booking.flight.rocket.model %></p>
+                <h3>Pilot: <%= booking.flight.rocket.user.name %></h3>
+
               </div>
               <div class="message-status">
                 <p class="status"><%= booking.status %></p>
