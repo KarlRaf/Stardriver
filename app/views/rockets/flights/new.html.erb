@@ -1,12 +1,20 @@
-<div class="container">
-  <div class="col-xs-12">
-    <h1>Create a flight</h1>
-    <%= simple_form_for [@rocket, @flight] do |f| %>
-      <%= f.input :destination %>
-      <%= f.input :departure %>
-      <%= f.input :description %>
-      <%= f.input :date , as: :date, html5: true %>
-      <%= f.button :submit, class: 'btn btn-success' %>
-    <% end %>
-</div>
+<div class="background-img">
+
+  <div class="form">
+
+    <div class="form-title">
+      <h1>Create a flight</h1>
+    </div>
+
+    <div class="form-table">
+      <%= simple_form_for [@rocket, @flight] do |f| %>
+        <%= f.input :destination %>
+        <%= f.input :departure %>
+        <%= f.input :description %>
+        <%= f.input :date , as: :date, html5: true %>
+        <%= f.button :submit, class: 'btn-form' %>
+      <% end %>
+    </div>
+
+  </div>
 </div>
