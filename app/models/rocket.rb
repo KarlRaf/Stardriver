@@ -8,7 +8,7 @@ class Rocket < ApplicationRecord
   ROCKETS = {}
 
   starships["results"].each_with_index do |starship|
-    ROCKETS[starship["name"]] = {capacity: starship["passengers"], model: starship["model"]}
+    ROCKETS[starship["model"]] = {capacity: starship["passengers"], model: starship["model"]}
   end
 
   belongs_to :user
@@ -23,5 +23,9 @@ class Rocket < ApplicationRecord
       str = "An anonymous rocket, model #{self.model} with #{self.capacity} sits."
     end
     return str
+  end
+
+  def name_and_model_for_new
+    ["#{name} - #{model}", id]
   end
 end
