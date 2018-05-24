@@ -4,7 +4,7 @@
 
   def index
     if params[:search].present?
-      @flights = Flight.where(destination: params[:search])
+      @flights = Flight.where("destination ILIKE :search OR departure ILIKE :search", search: "%#{params[:search]}%")
     else
       @flights = Flight.all
     end
