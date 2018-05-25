@@ -34,7 +34,7 @@
                     <a class="bills-link" href="/flights/<%= flight.id %>" ></a>
                   </div>
                 </div>
-                <%= link_to "Cancel", flight_path(flight), method: :delete, class: 'bills-book-button bills-cancel-button', data: {confirm: "are you sure you want to delete this flight?"} %>
+                <%= link_to "Cancel", flight_path(flight), method: :delete, remote: true, class: 'bills-book-button bills-cancel-button' %>
               </div>
             </div>
           <% end %>
