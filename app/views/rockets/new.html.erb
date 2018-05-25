@@ -9,7 +9,7 @@
     <div class="form-table" data-index-number="12314">
       <%= simple_form_for [@rocket] do |f| %>
         <%= f.input :model, :collection => Rocket::ROCKETS, include_blank: false %>
-        <%= f.input :name %>
+        <%= f.input :name, placeholder: 'Enter a name for your rocket' %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.button :submit, class: 'btn-form sweet-alert' %>

@@ -8,11 +8,11 @@
 
     <div class="form-table">
       <%= simple_form_for @flight do |f| %>
-        <%= f.input :destination %>
-        <%= f.input :departure %>
-        <%= f.input :description %>
+        <%= f.input :destination, placeholder: 'Enter your destination' %>
+        <%= f.input :departure, placeholder: 'Enter your departure location' %>
+        <%= f.input :description, placeholder: 'Enter some description for your flight' %>
         <%= f.association :rocket, collection: current_user.rockets, label_method: :model, include_blank: false %>
-        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: 'Select a date' %>
         <%= f.button :submit, class: 'btn-form' %>
       <% end %>
     </div>

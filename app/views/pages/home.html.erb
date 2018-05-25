@@ -1,6 +1,6 @@
-<div class="banner" style="background-image: url(https://images.unsplash.com/photo-1462332420958-a05d1e002413?ixlib=rb-0.3.5&s=ccf4da3008d853bf39f0642481306991&auto=format&fit=crop&w=1040&q=80);">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.1) 0%, rgba(0,36,61,0.1) 20%), url(https://images.unsplash.com/photo-1462332420958-a05d1e002413?ixlib=rb-0.3.5&s=ccf4da3008d853bf39f0642481306991&auto=format&fit=crop&w=1040&q=80);">
     <div class="banner-content">
-      <h1 class="ml3">Stardriver</h1>
+      <h1 class="title">Stardriver</h1>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
       <h2 class="ml3">To infinity and beyond</h2>
           <%= form_tag(flights_path, method: :get) do |f| %>
@@ -8,22 +8,21 @@
           <% end %>
     </div>
 </div>
-<h1 class="ml3">Board in Now</h1>
 <div class="container">
+  <h1 class="title">Boarding Now</h1>
   <div class="content">
     <div class="row">
       <% @flights.each do |flight| %>
         <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background-image: url(https://images.unsplash.com/photo-1516331138075-f3adc1e149cd?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a1bca94717c3a2c1c721a72da13d63f&auto=format&fit=crop&w=1683&q=80);">
-            <div class="card-category"> Rocket model: <%= flight.rocket.model %> </div>
+          <div class="card" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.1) 0%, rgba(0,36,61,0.3) 50%), url('https://images.unsplash.com/photo-1516632577621-74b63065a2bb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=05f132b916f3b2073b66833c5dbcf72c&auto=format&fit=crop&w=634&q=80');">
+            <div class="card-category"> 🚀 ROCKET MODEL: <%= flight.rocket.model %> </div>
             <div class="card-description">
               <ul>
-                <li><h4>From: <%= flight.departure %> </h4></li>
-                <li><h4>To: <%= flight.destination %>  </h4></li>
+                <li><h4>🛫 From <%= flight.departure %> </h4></li>
+                <li><h4>🛬 To <%= flight.destination %>  </h4></li>
               </ul>
-              <p><%= flight.date %></p>
             </div>
-            <img class="card-user" src="">
+            <%= cl_image_tag("#{flight.rocket.photo}", crop: :fill, class: "card-user") %>
             <a class="card-link" href="/flights/<%= flight.id %>" ></a>
           </div>
         </div>
