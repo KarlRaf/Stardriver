@@ -2,11 +2,17 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home]
   def home
     @flights = Flight.all.last(6)
-    #flights = @flights.sort_by{|flight| flight.destination}
-    #@flights_by_dest = [flights.first]
-    #flights.each.with_index do |flight, index|
-    #  @flights_by_dest << flight if @flights_by_dest.last.destination != flight.destination
-    #end
+  #   @destinations = {}
+  #   Flight.all.each do |flight|
+  #     if @destinations.keys.include?(flight.destination)
+  #       @destinations[flight.destination.to_s] += 1
+  #     else
+  #       @destinations = {flight.destination.to_s => 1}
+  #     end
+  #     @destinations.sort_by{ |_key, value| value }
+  #     @destinations = @destinations.first(6)
+  #   end
+  # raise
   end
 end
 
