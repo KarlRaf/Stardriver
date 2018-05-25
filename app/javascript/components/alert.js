@@ -13,4 +13,14 @@ function bindSweetAlertButtonDemo(title) {
 };
 };
 
-export { bindSweetAlertButtonDemo };
+const displayInfo = (title, url, id) => {
+ swal({
+    title: title,
+    text: "Major Tom to ground control, isn't it?",
+    icon: "success"
+  }).then(() => {
+    window.location = url
+  });
+}
+
+export { bindSweetAlertButtonDemo, displayInfo };

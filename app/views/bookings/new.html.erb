@@ -6,7 +6,7 @@
       <h1>Confirm your booking</h1>
     </div>
 
-    <div class="form-subtitle">
+    <div class="form-subtitle" data-booking-id="1">
       <p>Flight Date: <%= @flight.date %></p>
       <p>Departing from: <%= @flight.departure %></p>
       <p>Arriving in: <%= @flight.destination %></p>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="form-table">
-        <%= simple_form_for [@flight, @booking] do |f| %>
+        <%= simple_form_for [@flight, @booking], remote: true do |f| %>
           <%= f.input :comments %>
           <%= f.button :submit, class: 'btn-form' %>
       <% end %>

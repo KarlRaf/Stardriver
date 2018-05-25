@@ -6,8 +6,8 @@
       <h1>Create a flight</h1>
     </div>
 
-    <div class="form-table">
-      <%= simple_form_for @flight do |f| %>
+    <div class="form-table sweet-alert" data-flight-id="1">
+      <%= simple_form_for @flight, remote: true do |f| %>
         <%= f.input :destination %>
         <%= f.input :departure %>
         <%= f.input :description %>

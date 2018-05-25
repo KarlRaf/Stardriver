@@ -7,7 +7,7 @@
     </div>
 
     <div class="form-table" data-rocket-id="1">
-      <%= simple_form_for [@rocket] do |f| %>
+      <%= simple_form_for [@rocket], remote: true do |f| %>
         <%= f.input :model, :collection => Rocket::ROCKETS, include_blank: false %>
         <%= f.input :name %>
         <%= f.input :photo %>

@@ -7,7 +7,7 @@
     </div>
 
     <div class="form-table" data-rocket-id="2">
-      <%= simple_form_for [@rocket, @flight] do |f| %>
+      <%= simple_form_for [@rocket, @flight], remote: true do |f| %>
         <%= f.input :destination %>
         <%= f.input :departure %>
         <%= f.input :description %>
