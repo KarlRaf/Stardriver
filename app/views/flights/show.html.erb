@@ -13,7 +13,7 @@
             <h2> <strong> <%= @flight.rocket.user.name %></strong></h2>
             <p>Stardriver</p>
             <strong>More about <%= link_to @flight.rocket.user.name, @flight.rocket.user %></strong>
-            <%= link_to "Book this now", new_flight_booking_path(@flight), class: 'bills-book-button-flight' %>
+            <%= link_to "Book this now", new_flight_booking_path(@flight), class: 'btn' %>
           </div>
         </div>
         <div class="stat">
