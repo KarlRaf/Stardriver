@@ -9,11 +9,11 @@
       <div class="profile text-center">
         <div class="main">
           <div class="main-content">
-             <%= cl_image_tag current_user.photo, height: 100, width: 110, crop: :thumb, gravity: :face, class: "img-circle" %>
+             <%= cl_image_tag @flight.rocket.user.photo, height: 100, width: 110, crop: :thumb, gravity: :face, class: "img-circle", alt: "no profile_pic" %>
             <h2> <strong> <%= @flight.rocket.user.name %></strong></h2>
             <p>Stardriver</p>
             <strong>More about <%= link_to @flight.rocket.user.name, @flight.rocket.user %></strong>
-            <%= link_to "Book this now", new_flight_booking_path(@flight), class: 'btn btn-success' %>
+            <%= link_to "Book this now", new_flight_booking_path(@flight), class: 'bills-book-button-flight' %>
           </div>
         </div>
         <div class="stat">
