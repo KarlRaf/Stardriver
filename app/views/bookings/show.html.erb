@@ -52,15 +52,19 @@
         <p>Model: <%= @booking.flight.rocket.model %></p>
         <%= cl_image_tag("#{@booking.flight.rocket.photo}",
               crop: :fill, class: "rocket-pic-booking") %>
-        </div>
-        <div class="message-body">
+      </div>
+      <div class="message-body">
         <h3>Pilot: <%= @booking.flight.rocket.user.name %></h3>
       </div>
+      <div class="message-body">
+        <p>Comments: <%= @booking.comments %></p>
+      </div>
+
 
     </div>
   <% end %>
 
 
-  <%= link_to "Check flight offer", flight_path(@booking.flight), class: 'btn btn-primary' %>
+  <%= link_to "Check flight offer", flight_path(@booking.flight), class: 'btn-primary' %>
 
 </div>
