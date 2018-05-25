@@ -33,6 +33,12 @@
     end
   end
 
+  def destroy
+    @flight = Flight.find(params[:id])
+    @flight.destroy
+    redirect_to my_flights_path
+  end
+
   def show
     @flight = Flight.find(params[:id])
   end

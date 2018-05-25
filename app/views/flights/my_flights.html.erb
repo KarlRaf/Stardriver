@@ -24,17 +24,17 @@
 
                     <div class="bills-description">
                       <ul>
-                        <li><h4>🛫 From <%= flight.departure %></h4></li>
-                        <li><h4>🛬 To <%= flight.destination %></h4></li>
-                        <li><p>Departing On <%= flight.date %></p></li>
-                        <!-- bills-book-button -->
+                        <li><h4>🛫 <em>From</em><strong> <%= flight.departure %></strong></h4></li>
+                        <li><h4>🛬 <em>To </em><strong><%= flight.destination %></strong></h4></li>
+                        <li><p><em>Departing On</em><strong> <%= flight.date.strftime('%a %e %b %Y') %></strong></p></li>
                       </ul>
                     </div>
 
-                    <img class="bills-user" src="">
+                    <%= cl_image_tag("#{flight.rocket.user.photo}", crop: :fill, class: "bill-user") %>
                     <a class="bills-link" href="/flights/<%= flight.id %>" ></a>
                   </div>
                 </div>
+                <%= link_to "Cancel", flight_path(flight), method: :delete, class: 'bills-book-button bills-cancel-button', data: {confirm: "are you sure you want to delete this flight?"} %>
               </div>
             </div>
           <% end %>
