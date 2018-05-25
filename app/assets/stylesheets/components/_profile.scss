@@ -12,6 +12,7 @@
 .profile .description {
   grid-row: 2 / span 1;
   grid-column: 2 / span 3;
+  position: relative;
 }
 
 // .profile .stat {
@@ -53,16 +54,23 @@ h2 em {
   color: rgba(0,0,0,0.6);
 }
 .profile .btn {
-  border-radius: 0;
-  border: none;
+  font-family: $buttons-font;
+  font-weight: bold;
+  color: white;
+  background-color: $strong;
   width: 100%;
+  height: 60px;
   margin-top: 30px;
-  background: #37B686;
+  padding-top: 18px;
+  border: 1px solid $strong;
+  border-radius: 5px;
+    &:hover {
+      background-color: $medium;
+      border-color: $medium;
+      font-family: $buttons-font;
+    }
 }
-.profile .btn:hover {
-  background: #37B686;
-  opacity: 0.7;
-}
+
 .stat h3 {
   color: #37B686;
   font-size: 28px;
@@ -84,4 +92,14 @@ h2 em {
 
 .container {
   margin-top: -13px;
+}
+
+
+.profile-rocket-avatar {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
 }

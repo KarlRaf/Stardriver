@@ -18,7 +18,7 @@
         </div>
         <div class="stat">
           <h2><strong><%= @flight.date.strftime('%a %e %b %Y') %></strong>
-          <h2><em>From:</em> <strong><%= @flight.departure %></strong><em>To:</em> <strong><%= @flight.destination %></strong></h2>
+          <h2><em>From:</em> <strong><%= @flight.departure %></strong><em> To:</em> <strong><%= @flight.destination %></strong></h2>
         </div>
         <div class="description">
           <div class="description-content">
@@ -27,6 +27,7 @@
             <p class="text-justify">
               <%=@flight.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, molestias, cum, veritatis facere incidunt eaque quisquam rerum nulla temporibus aliquid architecto debitis eius fugit quos voluptates aut repellat fuga autem!
             </p>
+            <%= cl_image_tag("#{@flight.rocket.photo}", crop: :fill, class: "profile-rocket-avatar") %>
             <h3></h3>
           </div>
         </div>
