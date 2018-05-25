@@ -51,14 +51,15 @@
         <h2>Your bookings as a pilot</h2>
       </div>
       <ul class="nav nav-tabs" role="tablist">
-        <% @mepilot.each do |booking| %>
+        <% @meflights.each do |flight| %>
 
-          <li role="presentation" class="active"><a href="#" aria-controls="<%= booking.id %>" role="tab" data-toggle="tab">Flight: <%= booking.id %></a>
+          <li role="presentation" class="active"><a href="#" aria-controls="<%= flight.id %>" role="tab" data-toggle="tab">Flight: <%= flight.id %></a>
           </li>
         <% end %>
       </ul>
-
-      <% @mepilot.each do |booking| %>
+      <% @meflights %>
+      <% @meflights.each do |flight| %>
+        <% flight.bookings.each do |booking| %>
         <% if booking.flight.rocket.user.id == current_user.id && booking.status != "Denied"%>
           <div class="small-message">
 
@@ -92,6 +93,7 @@
             </div>
           </div>
         <% end %>
+      <% end %>
       <% end %>
     </div>
   <% end %>

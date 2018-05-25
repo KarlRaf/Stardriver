@@ -13,7 +13,7 @@ require 'faker'
 
 10.times do
   user = User.create!(name: Faker::StarWars.character, email: Faker::Internet.email, bio: Faker::BackToTheFuture.quote, password: "secret")
-  rocket = Rocket.new(capacity: Rocket::ROCKETS[ Rocket::ROCKETS.keys.sample][:capacity], model: Rocket::ROCKETS[ Rocket::ROCKETS.keys.sample][:model], name: Faker::Space.nasa_space_craft, photo: "<%= asset_path('xwing.png') %>" )
+  rocket = Rocket.new(capacity: Rocket::ROCKETS[ Rocket::ROCKETS.keys.sample][:capacity], model: Rocket::ROCKETS[ Rocket::ROCKETS.keys.sample][:model], name: Faker::Space.nasa_space_craft, photo: 'https://vignette.wikia.nocookie.net/starwars/images/6/60/Xwing-SWB.jpg/revision/latest/scale-to-width-down/2000?cb=20160704070524')
   rocket.user = user
   rocket.save!
   5.times do
