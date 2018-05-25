@@ -10,9 +10,15 @@ class Rockets::FlightsController < ApplicationController
     @rocket = Rocket.find(params[:rocket_id])
     @flight.rocket = @rocket
     if @flight.save
-      redirect_to bookings_path
+      respond_to do |format|
+        format.html { redirect_to redirect_to my_flights_path }
+        format.js
+      end
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+      end
+      # render :new
     end
   end
 

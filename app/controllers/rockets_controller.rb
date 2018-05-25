@@ -16,9 +16,16 @@ class RocketsController < ApplicationController
     authorize @rocket
     if @rocket.save
       # flash = "It is working!"
-      redirect_to new_rocket_flight_path(@rocket)
+      respond_to do |format|
+        format.html { redirect_to new_rocket_flight_path(@rocket) }
+        format.js
+      end
+      # redirect_to new_rocket_flight_path(@rocket)
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+      end
+
     end
   end
 

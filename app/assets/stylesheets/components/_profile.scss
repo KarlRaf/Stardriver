@@ -93,13 +93,16 @@ h2 em {
 .container {
   margin-top: -13px;
 }
-
-
 .profile-rocket-avatar {
   position: absolute;
   right: 20px;
   top: 20px;
   width: 60px;
   height: 60px;
+  border-radius: 50%;
+}
+.img-circle {
+  height: 100px;
+  width: 110px;
   border-radius: 50%;
 }

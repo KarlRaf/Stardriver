@@ -80,6 +80,52 @@
   }
 }
 
+.bills-book-button-flight {
+  position: absolute;
+  padding-top: 20px;
+  height: 12%;
+  width: 16%;
+  left: 163px;
+  top: 85%;
+  color: white;
+  border: 1px solid $strong;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  background: $strong;
+  font-family: $buttons-font;
+  font-size: 24px;
+
+  &:hover {
+  background: $medium;
+  text-decoration: none;
+  border: 1px solid $medium;
+
+  }
+}
+.bills-cancel-button {
+  position: absolute;
+  padding-top: 8px;
+  height: 30%;
+  width: 15%;
+  color: white;
+  border: 1px solid $red;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  background: $red;
+  font-family: $buttons-font;
+  font-size: 20px;
+
+  top: 80px;
+
+  &:hover {
+  background: #CF2F34;
+  text-decoration: none;
+  border: 1px solid #CF2F34;
+  color: white;
+  }
+}
 .bills-link {
   position: absolute;
   z-index: 1;
