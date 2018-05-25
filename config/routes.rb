@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  get "flights/my_flights", to: "flights#my_flights", as: :my_flights
+  get "my_flights", to: "flights#my_flights", as: :my_flights
   root to: 'pages#home'
   resources :users, only: :show
   resources :flights
