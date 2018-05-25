@@ -1,0 +1,185 @@
+.messages-content {
+  margin: 10px;
+  display:flex;
+  justify-content: space-around;
+}
+
+
+.travelers {
+  flex: 0 0 40%;
+  border: 1px solid $strong;
+  border-radius: 5px;
+}
+
+.pilots {
+  flex: 0 0 40%;
+  border: 1px solid $strong;
+  border-radius: 5px;
+}
+
+.title-box {
+  font-family: $body-font;
+  font-size: 24px;
+  font-weight: bold;
+  color: $text-black;
+  margin: 0px;
+  margin-bottom: 20px;
+  padding: 0px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid $medium-gray;
+  text-align: center;
+}
+
+
+.small-message {
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  border-bottom: 1px solid $medium-gray;
+}
+
+
+
+.small-message:last-child {
+  border-bottom: none;
+}
+
+.small-message-infos {
+  flex: 0 0 70%;
+
+}
+.small-message-date {
+  strong {
+  font-size: 24px;
+  margin-bottom: 0px;
+  }
+  em {
+  font-size: 16px;
+  margin-bottom: 0px;
+  }
+
+}
+
+.small-message-details {
+  strong {
+  font-size: 24px;
+  margin-bottom: 0px;
+  }
+  em {
+  font-size: 16px;
+  margin-bottom: 0px;
+  }
+
+}
+
+.small-message-rocket {
+  strong {
+  font-size: 24px;
+  margin-bottom: 0px;
+  }
+  em {
+  font-size: 16px;
+  margin-bottom: 0px;
+  }
+
+}
+
+.grid-btns {
+  flex: 0 0 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .btn-cancels {
+    flex: 0 0 30%;
+    width: 70%;
+    background-color: $red;
+    border: 1px solid $red;
+    font-family: $buttons-font;
+    font-weight: bold;
+    color: white;
+    height: 60px;
+    opacity: 1;
+    margin: 10px;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+
+      &:hover {
+        opacity: 0.6;
+        text-decoration: none;
+      }
+  }
+  .btn-details {
+    flex: 0 0 30%;
+    width: 70%;
+    background-color: $medium;
+    border: 1px solid $medium;
+    font-family: $buttons-font;
+    font-weight: bold;
+    color: white;
+    height: 60px;
+    border-radius: 5px;
+    padding: 16px;
+    text-align: center;
+      &:hover {
+        opacity: 0.6;
+        text-decoration: none;
+      }
+  }
+
+  .btn-validates {
+    flex: 0 0 30%;
+    width: 70%;
+    background-color: $green;
+    border: 1px solid $green;
+    font-family: $buttons-font;
+    font-weight: bold;
+    color: white;
+    height: 60px;
+    border-radius: 5px;
+    padding: 16px;
+    text-align: center;
+    margin: 10px;
+      &:hover {
+        opacity: 0.6;
+        text-decoration: none;
+      }
+  }
+
+    .btn-refuses {
+    flex: 0 0 30%;
+    width: 70%;
+    background-color: $red;
+    border: 1px solid $red;
+    font-family: $buttons-font;
+    font-weight: bold;
+    color: white;
+    height: 60px;
+    border-radius: 5px;
+    padding: 16px;
+    text-align: center;
+      &:hover {
+        opacity: 0.6;
+        text-decoration: none;
+      }
+  }
+
+  .status {
+    flex: 0 0 30%;
+  }
+
+  strong {
+  font-size: 24px;
+  margin-bottom: 0px;
+  color: $medium-gray;
+  }
+  em {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: $medium-gray;
+  }
+
+}
+
+
