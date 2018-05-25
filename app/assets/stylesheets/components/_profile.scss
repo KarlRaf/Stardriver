@@ -1,8 +1,8 @@
 .profile {
   display: grid;
-  grid-template-columns: 300px 1fr ;
+  grid-template-columns: 230px 1fr ;
   grid-template-rows: 50% 50%;
-  height: calc(100vh - 230px);
+  height: calc(93vh - 250px);
   padding: 30px;
 }
 .profile .main {
@@ -19,6 +19,11 @@
 //   grid-column: 2 / span 3;
 // }
 
+
+h2 em {
+  font-size: 16px;
+}
+
 .main, .description, .stat {
   background: white;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
@@ -27,6 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+
 }
 @media (max-width: 940px) {
   .profile {
@@ -36,7 +42,8 @@
 
 /* Fonts and colors */
 .profile h2 {
-  font-size: 22px;
+  font-size: 32px;
+  color: black;
 }
 .profile h3 {
   font-size: 22px;
@@ -72,4 +79,9 @@
 .description p {
   color: rgba(0,0,0,0.5);
   font-weight: lighter;
+}
+
+
+.container {
+  margin-top: -13px;
 }
