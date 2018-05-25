@@ -7,19 +7,35 @@
     </div>
 
     <div class="form-subtitle">
-      <p>Flight Date: <%= @flight.date %></p>
-      <p>Departing from: <%= @flight.departure %></p>
-      <p>Arriving in: <%= @flight.destination %></p>
-      <p>Rocket type: <%= @flight.rocket.model %></p>
-      <p>Number of passengers: <%= @flight.rocket.capacity %></p>
-      <!-- <p>Pilot: </p> -->
-      <p>Additional details: <%= @flight.description %></p>
+      <div class="form-flight-info">
+        <h2>Your flight details:</h2>
+
+        <p>🛫 Departing from:</p>
+        <h4><%= @flight.departure %></h4>
+
+        <p>🛬 Arriving in:</p>
+        <h4><%= @flight.destination %></h4>
+
+        <p>Flight Date:</p>
+        <h4><%= @flight.date.strftime('%a %e %b %Y') %></h4>
+
+      </div>
+
+      <div class="form-additional-info">
+        <h5>Additional details:</h5>
+        <p>🚀 Rocket type: <%= @flight.rocket.model %></p>
+
+        <p>Number of passengers: <%= @flight.rocket.capacity %></p>
+        <!-- <p>Pilot: </p> -->
+        <p>Additional details: <%= @flight.description %></p>
+      </div>
+
     </div>
 
     <div class="form-table">
         <%= simple_form_for [@flight, @booking] do |f| %>
-          <%= f.input :comments %>
-          <%= f.button :submit, class: 'btn-form' %>
+          <%= f.input :comments, placeholder: 'Let us know of any information you wish to share with us' %>
+          <%= f.button :submit,class: 'btn-form' %>
       <% end %>
     </div>
   </div>

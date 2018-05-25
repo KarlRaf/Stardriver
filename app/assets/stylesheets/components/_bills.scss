@@ -13,7 +13,7 @@
   position: relative;
   margin: 10px;
   padding: 10px;
-  width: 75%;
+  width: 80%;
   height: 150px;
   flex-grow: 1;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -36,37 +36,44 @@
 
 .bills-description {
   padding-left: 10px;
-  font-size: 24px;
   font-weight: bold;
   color: $text-black;
     p {
     font-size: 16px;
     font-weight: lighter;
-    color: $strong;
-  }
+      em {
+        font-size: 16px;
+      }
+    }
 }
 
 .bills-description ul {
   list-style-type: none;
+  font-size: 24px;
+    em {
+      font-size: 16px;
+    }
 }
 
 .bills-book-button {
   position: absolute;
-  padding-top: 25px;
+  padding-top: 20px;
   height: 50%;
   width: 20%;
-  right: 10px;
+  right: 60px;
   color: white;
   border: 1px solid $strong;
   border-radius: 5px;
   text-align: center;
   font-weight: bold;
   background: $strong;
+  font-family: $buttons-font;
+  font-size: 24px;
 
   &:hover {
-  background: $pop;
+  background: $medium;
   text-decoration: none;
-  border: 1px solid $pop;
+  border: 1px solid $medium;
 
   }
 }
@@ -81,3 +88,11 @@
   opacity: 0;
 }
 
+.bill-user {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
