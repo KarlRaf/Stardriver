@@ -22,7 +22,7 @@
                 <li><h4>🛬 To <%= flight.destination %>  </h4></li>
               </ul>
             </div>
-            <%= cl_image_tag("#{flight.rocket.photo}", crop: :fill, class: "card-user") %>
+            <%= cl_image_tag(flight.rocket.photo, gravity: "faces", crop: "fill" , width: 40, height: 40, class: "card-user") %>
             <a class="card-link" href="/flights/<%= flight.id %>" ></a>
           </div>
         </div>
