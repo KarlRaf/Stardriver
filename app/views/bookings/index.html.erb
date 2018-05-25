@@ -21,6 +21,7 @@
       <div role="tabpanel" class="tab-pane active" id="traveler">
         <% @bookings.each do |booking| %>
           <div class="message">
+            <p>Booking reference: <%= booking.id %></p>
             <div class="message-name">
               <h2>Departure date</h2>
               <h3><%= booking.flight.date.strftime('%a %e %b %Y') %></h3>
