@@ -27,9 +27,16 @@
     @rocket = Rocket.find(flight_params[:rocket_id])
     @flight.rocket = @rocket
     if @flight.save
-      redirect_to bookings_path
+      respond_to do |format|
+        format.html { redirect_to bookings_path }
+        format.js
+      end
+      # redirect_to bookings_path
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+      end
+      # render :new
     end
   end
 

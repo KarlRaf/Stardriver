@@ -7,9 +7,13 @@ import "../plugins/flatpickr"
 import { fadding } from '../components/anime';
 fadding();
 
-import { bindSweetAlertButtonDemo } from '../components/alert';
+import { bindSweetAlertButtonDemo, displayInfo } from '../components/alert';
 
 // selectionner l'element
 // if ()
 // if (data attribute)
-bindSweetAlertButtonDemo();
+
+// if (rocketId === "1")
+// bindSweetAlertButtonDemo();
+
+global.displayInfo = displayInfo;
