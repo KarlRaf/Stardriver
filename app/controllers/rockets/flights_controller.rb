@@ -11,7 +11,7 @@ class Rockets::FlightsController < ApplicationController
     @flight.rocket = @rocket
     if @flight.save
       respond_to do |format|
-        format.html { redirect_to redirect_to my_flights_path }
+        format.html { redirect_to my_flights_path }
         format.js
       end
     else
