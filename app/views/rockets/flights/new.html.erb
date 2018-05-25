@@ -5,13 +5,12 @@
     <div class="form-title">
       <h1>Create a flight</h1>
     </div>
-
-    <div class="form-table" data-rocket-id="2">
+    <div class="form-table">
       <%= simple_form_for [@rocket, @flight], remote: true do |f| %>
-        <%= f.input :destination %>
-        <%= f.input :departure %>
-        <%= f.input :description %>
-        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :destination, placeholder: 'Enter your destination' %>
+        <%= f.input :departure, placeholder: 'Enter your departure location' %>
+        <%= f.input :description, placeholder: 'Enter some description for your flight'  %>
+        <%= f.input :date, as: :string, required: false, input_html: {class: "datepicker"}, placeholder: 'Select a date' %>
         <%= f.button :submit, class: 'btn-form' %>
       <% end %>
     </div>

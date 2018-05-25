@@ -14,11 +14,9 @@ class Rockets::FlightsController < ApplicationController
         format.html { redirect_to new_flight_booking_path(@flight) }
         format.js
       end
-      # redirect_to new_flight_booking_path(@flight)
     else
       respond_to do |format|
         format.html { render :new }
-        format.js
       end
       # render :new
     end

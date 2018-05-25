@@ -9,40 +9,26 @@
       <div class="profile text-center">
         <div class="main">
           <div class="main-content">
-            <h2><%= @flight.rocket.user.name %></h2>
+             <%= cl_image_tag current_user.photo, height: 100, width: 110, crop: :thumb, gravity: :face, class: "img-circle" %>
+            <h2> <strong> <%= @flight.rocket.user.name %></strong></h2>
             <p>Stardriver</p>
-            <a href="#" class="btn btn-danger btn-lg">Book this now</a>
+            <strong>More about <%= link_to @flight.rocket.user.name, @flight.rocket.user %></strong>
+            <%= link_to "Book this now", new_flight_booking_path(@flight), class: 'btn btn-success' %>
           </div>
         </div>
         <div class="stat">
-         <h2> Date: <%= @flight.date %> </h2>
-          <h2>From: <%= @flight.departure %> - To: <%= @flight.destination %></h2>
-          </div>
+          <h2><strong><%= @flight.date.strftime('%a %e %b %Y') %></strong>
+          <h2><em>From:</em> <strong><%= @flight.departure %></strong><em>To:</em> <strong><%= @flight.destination %></strong></h2>
+        </div>
         <div class="description">
           <div class="description-content">
-            <h3>More about <%= @flight.rocket.user.name %></h3>
+            <h3><strong>More About this flight</strong></h3>
+            <p>With the <strong><%= @flight.rocket.name %></strong> a <%= @flight.rocket.model %></p>
             <p class="text-justify">
-              <%=@flight.rocket.user.bio %>
+              <%=@flight.description %> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, molestias, cum, veritatis facere incidunt eaque quisquam rerum nulla temporibus aliquid architecto debitis eius fugit quos voluptates aut repellat fuga autem!
             </p>
+            <h3></h3>
           </div>
         </div>
       </div>
     </div>
-
-
-<div class="container">
-
-  <div class="message">
-    <div class="message-name">
-      <h2><%= @flight.date %></h2>
-      <p>Date</p>
-    </div>
-    <div class="message-body">
-      <h2>From: <%= @flight.departure %> - To: <%= @flight.destination %></h2>
-      <p><%= @flight.description %></p>
-    </div>
-    <div class="message-status">
-     <%= link_to "Book this flight", new_flight_booking_path(@flight), class: 'btn btn-success' %>
-    </div>
-  </div>
-</div>
