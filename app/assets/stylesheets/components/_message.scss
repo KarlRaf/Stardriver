@@ -22,11 +22,13 @@
   color: black;
   font-size: 24px;
   margin-bottom: 0px;
+  text-align: center;
 }
 .message-name h2 {
   color: black;
   font-size: 28px;
   margin-bottom: 0px;
+  text-align: center;
 }
 .message-name p {
   color: $medium-gray;
@@ -37,6 +39,7 @@
 .message-body {
   padding-left: 10px;
   padding-right: 10px;
+  text-align: center;
 }
 
 .message-body p {

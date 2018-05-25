@@ -28,6 +28,11 @@
   color: white;
   position: relative;
   margin-bottom: 25px;
+  border-radius: 5px;
+  &:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+  }
 }
 .card-user {
   position: absolute;
@@ -46,9 +51,13 @@
 }
 .card-description {
   position: absolute;
-  bottom: 10px;
+  bottom: 20px;
   left: 10px;
+  ul {
+     list-style-type: none;
+  }
 }
+
 .card-description h2 {
   font-size: 24px;
 }
@@ -68,34 +77,42 @@
   opacity: 0;
 }
 .card-link:hover {
-  opacity: 0.1;
+  opacity: 0.3;
 }
+
 .content {
   margin-top: 25px;
 }
+
 .content-min-height {
   min-height: calc(100vh - 70px);
 }
+
 .row {
   margin-top: 20px;
 }
+
 .input{
   font-family: inherit;
-  font-size: inherit;
+  font-size: 20px;
   line-height: inherit;
   background: rgba(0, 0, 0, 0);
   border: solid white 1px;
   outline: none;
   color: white;
   border-radius: 3px;
-  width: 193px;
+  width:400px;
+  height: 50px;
+  text-align: center;
 }
 .ml3 {
   font-weight: 900;
   font-size: 3.5em;
 }
-h2 {
+
+.title {
   text-align: center;
   font-family: $body-font;
-  color: #A9A9A9;
+  color: $text-black;
+  font-weight: bold;
 }

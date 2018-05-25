@@ -2,14 +2,15 @@
   padding: 30px;
   background: $white none repeat scroll 0% 0%;
   border-radius: 4px;
-  padding: 24px;
   width: 40% ;
-  opacity: 0.8;
+  opacity: 0.9;
+  margin: 20px 0px;
 }
 
 .form-title h1 {
   font-family: $body-font;
   font-size: 40px;
+  font-weight: bold;
   color: $text-black;
   margin: 0px;
   margin-bottom: 20px;
@@ -19,15 +20,29 @@
   border-bottom: 1px solid $medium-gray;
 }
 
-.form-subtitle p {
+.form-subtitle {
   font-family: $body-font;
-  font-size: 24px;
   color: $text-black;
   margin: 0px;
   margin-bottom: 10px;
   padding: 0px;
+  padding-bottom: 10px;
+  h4 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  h5 {
+    font-size: 24px;
+  }
+  p {
+    font-size: 16px;
+  }
 }
 
+.form-flight-info {
+  border-bottom: 1px solid $medium-gray;
+  margin-bottom: 20px;
+}
 
 .form-control-label {
   font-weight: normal;
@@ -42,8 +57,8 @@
   color: white;
   height: 60px;
     &:hover {
-      background-color: $pop;
-      border-color: $pop;
+      background-color: $medium;
+      border-color: $medium;
       font-family: $buttons-font;
     }
 }
@@ -62,3 +77,13 @@
   background-color: #fff;
   border: 1px solid #ccc;
 }
+
+.file {
+  font-weight: normal;
+}
+
+.form-check-label {
+  font-weight: normal;
+}
+
+
