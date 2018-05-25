@@ -40,8 +40,12 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    @booking.destroy
-    redirect_to bookings_path
+    if @booking.destroy
+      respond_to do |format|
+        format.html { redirect_to bookings_path }
+        format.js
+      end
+    end
   end
 
   # CHANGED TO VALIDATE USER DIRECTLY FROM INDEX

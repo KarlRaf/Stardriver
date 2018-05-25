@@ -28,7 +28,7 @@
     @flight.rocket = @rocket
     if @flight.save
       respond_to do |format|
-        format.html { redirect_to bookings_path }
+        format.html { redirect_to my_flights_path }
         format.js
       end
       # redirect_to bookings_path
@@ -42,8 +42,13 @@
 
   def destroy
     @flight = Flight.find(params[:id])
-    @flight.destroy
-    redirect_to my_flights_path
+    if @flight.destroy
+      respond_to do |format|
+        format.html { redirect_to my_flights_path }
+        format.js
+      end
+    end
+    # redirect_to my_flights_path
   end
 
   def show

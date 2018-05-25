@@ -7,7 +7,7 @@ import "../plugins/flatpickr"
 import { fadding } from '../components/anime';
 fadding();
 
-import { bindSweetAlertButtonDemo, displayInfo } from '../components/alert';
+import { bindSweetAlertButtonDemo, displayInfo, deleteInfo } from '../components/alert';
 
 // selectionner l'element
 // if ()
@@ -17,3 +17,4 @@ import { bindSweetAlertButtonDemo, displayInfo } from '../components/alert';
 // bindSweetAlertButtonDemo();
 
 global.displayInfo = displayInfo;
+global.deleteInfo = deleteInfo
