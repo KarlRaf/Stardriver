@@ -14,6 +14,13 @@
     @flight = Flight.new
   end
 
+  def my_flights
+    @flights = []
+    Flight.all.each do |flight|
+      @flights << flight if flight.rocket.user == current_user
+    end
+    return @flights
+  end
 
   def create
     @flight = Flight.new(flight_params)
