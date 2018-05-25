@@ -6,8 +6,8 @@
       <h1>Create a big fu**ing rocket</h1>
     </div>
 
-    <div class="form-table" data-index-number="12314">
-      <%= simple_form_for [@rocket] do |f| %>
+    <div class="form-table" data-rocket-id="1">
+      <%= simple_form_for [@rocket], remote: true do |f| %>
         <%= f.input :model, :collection => Rocket::ROCKETS, include_blank: false %>
         <%= f.input :name, placeholder: 'Enter a name for your rocket' %>
         <%= f.input :photo %>

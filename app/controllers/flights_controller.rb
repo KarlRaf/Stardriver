@@ -14,16 +14,36 @@
     @flight = Flight.new
   end
 
+  def my_flights
+    @flights = []
+    Flight.all.each do |flight|
+      @flights << flight if flight.rocket.user == current_user
+    end
+    return @flights
+  end
 
   def create
     @flight = Flight.new(flight_params)
     @rocket = Rocket.find(flight_params[:rocket_id])
     @flight.rocket = @rocket
     if @flight.save
-      redirect_to bookings_path
+      respond_to do |format|
+        format.html { redirect_to bookings_path }
+        format.js
+      end
+      # redirect_to bookings_path
     else
-      render :new
+      respond_to do |format|
+        format.html { render :new }
+      end
+      # render :new
     end
+  end
+
+  def destroy
+    @flight = Flight.find(params[:id])
+    @flight.destroy
+    redirect_to my_flights_path
   end
 
   def show

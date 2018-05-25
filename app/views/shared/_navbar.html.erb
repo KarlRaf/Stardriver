@@ -12,6 +12,9 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+      <% if current_user.rockets %>
+        <%= link_to "My flights", my_flights_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <% end %>
       <%= link_to "All flights", flights_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Add a rocket 🚀", new_rocket_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <% if current_user.rockets.exists? %>

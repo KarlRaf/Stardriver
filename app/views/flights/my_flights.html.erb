@@ -1,0 +1,46 @@
+<div class="medium-banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.4) 0%, rgba(0,36,61,0.4) 50%), url('https://source.unsplash.com/featured/?outerspace');">
+  <div class="banner-content">
+    <h1>Flights available</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10 col-xs-offset-1">
+      <div class="bills-all">
+        <% if @flights.blank? %>
+          <h4>You don't have proposed a flight yet. <%= link_to "Propose one", new_flight_path, class: "btn btn-primary" %></h4>
+        <% else %>
+
+          <% @flights.each do |flight| %>
+            <div class="col-xs-12">
+              <div class="bills-and-button">
+                <div class="col-xs-12">
+                  <div class="bills-large">
+
+                    <div class="bills-category">
+                      <p>🚀 ROCKET MODEL: <%= flight.rocket.model.upcase %></p>
+                    </div>
+
+                    <div class="bills-description">
+                      <ul>
+                        <li><h4>🛫 <em>From</em><strong> <%= flight.departure %></strong></h4></li>
+                        <li><h4>🛬 <em>To </em><strong><%= flight.destination %></strong></h4></li>
+                        <li><p><em>Departing On</em><strong> <%= flight.date.strftime('%a %e %b %Y') %></strong></p></li>
+                      </ul>
+                    </div>
+
+                    <%= cl_image_tag("#{flight.rocket.user.photo}", crop: :fill, class: "bill-user") %>
+                    <a class="bills-link" href="/flights/<%= flight.id %>" ></a>
+                  </div>
+                </div>
+                <%= link_to "Cancel", flight_path(flight), method: :delete, class: 'bills-book-button bills-cancel-button', data: {confirm: "are you sure you want to delete this flight?"} %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
